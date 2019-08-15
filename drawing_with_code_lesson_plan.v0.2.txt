@@ -1,0 +1,194 @@
+﻿
+
+
+2. Activity 1: Let's draw with code without using p5.js
+Using a pencil or pen on a blank piece of paper:
+    1. Draw a triangle anywhere on the page
+    2. Somewhere in the remaining space, draw a circle
+    3. Finally, in the remaining space, draw a square
+    4. Colour in one of the shapes using one of the crayons
+    5. Colour in a different shape using a different crayon
+    6. Colour in the last shape using the last crayon
+Let's pin up our drawings.
+Let's reflect on our drawings.
+2.1. Triangle, Square, Circle: A Psychological Test
+In 1923 Wassily Kandinsky circulated a questionnaire at the Bauhaus, asking respondents to fill in a triangle, square, and circle with the primary colors of red, yellow, and blue:
+    1. Fill in these three forms with one of the primary colors: red, yellow, or blue. The coloring is to fill the form entirely in each case. One color per shape.
+    2. If possible, provide an explanation for your choice of color.
+He hoped to discover a universal correspondence between form and color, embodied in the equation red=square, yellow=triangle, blue=circle.
+
+Kandinsky achieved a remarkable consensus with his questionnaire — in part, perhaps, because others at the school supported his theoretical ideal. The equation of yellow triangle, red square, and blue circle inspired numerous projects at the Bauhaus in the early 1920s, including a baby cradle by Peter Keler and a proposal for a wall mural by Herbert Bayer, although in later years some members of the Bauhaus dismissed Kandinsky’s fascination with these shape and color combinations as utopian aestheticism.
+https://jaced.com/2007/01/04/triangle-square-circle-a-psychological-test/
+2.2. Sol LeWitt
+
+2.3. Vera Molnar
+http://dam.org/artists/phase-one/vera-molnar/artworks-bodies-of-work/works-from-the-1960s-70s
+https://www.atariarchives.org/artist/sec11.php
+3. Activity 2: Let's run our first p5.js sketch
+Objective: be able to create and run code using the p5.js web editor
+p5.js is:
+3.1. p5js.org
+3.2. editor.p5js.org
+3.3. line()
+3.4. mouseX/mouseY
+3.5. draw a line and move it using mouseX/mouseY
+
+We're going to create our sketches using the p5.js. There are two ways to create sketches using p5.js:
+    • by downloading and installing the libraries
+    • by using the p5.js web editor
+For this workshop, we are going to use the web editor because:
+    • we won't have to spend time setting it up on everyone's computer
+    • we'll all be working with the same user interface as we create our sketches
+You can find instructions on downloading and using the libraries here: 
+
+3.6. Creating an account
+Go to https://editor.p5js.org/
+    1. Get started by going to http://editor.p5js.org/. You should see the p5.js editor:
+
+    2. Click on Sign up to create an account so you can save your sketches and share them with other people. You'll have to provide your email address and a create a password. If you don't want to sign up, you can still create sketches but you won't be able to save them.
+    3. Make sure the Auto-refresh check-box (next to the Stop button) is checked. 
+    4. Press the Play button to make sure everything is working. A gray rectangle should appear to the right of the editing pane.
+3.7. What are the different parts of the editor for?
+We type commands into the Editor pane and then play them. The result of playing the commands is shown in the Preview pane. If the commands can't be played, messages about possible reasons why are shown in the Console pane. 
+3.7.1. Menu bar
+3.7.2. Play bar
+3.7.3. Side pane (hidden by default)
+3.7.4. Edit pane
+3.7.4.1. setup
+  createCanvas(400, 400);
+3.7.4.2. draw
+  background(220);
+3.7.5. Preview pane
+3.7.6. Console pane
+3.8. What are the p5.js commands?
+A full reference to the p5.js commands can be found at https://p5js.org/reference/. They let us do things like
+4. Activity: Let's draw some lines
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  line(100,0,100,400);
+  line(200,0,200,400);
+  line(300,0,300,400);
+  line(0,100,400,100);
+  line(0,200,400,200);
+  line(0,300,400,300);
+}
+Lets pull all this together and create a simple sketch to draw a line:
+    1. In the editor, place the cursor at the end of the line that says:
+      background(220);
+    • Press the Enter key to open up a new line.
+    1. Type in the following line replacing the letters purple with numbers between 0 and 400 (make sure to include the brackets, commas, and semicolon):
+line(x, y, x, y);
+4.1. Making the ends of the line follow the mouse
+We can change the length of the line by stopping the commands, changing the parameters to the line command, and then playing the commands again. Not very interesting.
+We can also change the length of the line while the commands are playing by having p5.js tell us the x and y coordinates of the mouse and using those values as the parameters to the line command:
+    1. Change the last two numbers in the line() command to be the words mouseX and mouseY:
+line(x, y, mouseX, mouseY);
+    2. Play the sketch and move your mouse around the canvas to see what happens.
+4.2. Printing the mouse coordinates
+Sometimes it's useful to know what the values for mouseX and mouseY are. We can do that by adding another three lines to our sketch:
+function mouseClicked() {
+  print(mouseX,mouseY);
+}
+5. Activity 3: Let's turn our sketches into code
+function setup() {
+  createCanvas(400, 400);
+  rectMode(CORNERS);
+}
+
+function draw() {
+  background(220);
+
+  line(100,0,100,400);
+  line(200,0,200,400);
+  line(300,0,300,400);
+  line(0,100,400,100);
+  line(0,200,400,200);
+  line(0,300,400,300);
+
+  triangle(150,25,290,100,150,175);
+  ellipse(75,275,100);
+  rect(175,225,290,350);
+}
+5.1. triangle
+A triangle is a plane created by connecting three points. The first two arguments specify the first point, the middle two arguments specify the second point, and the last two arguments specify the third point.
+triangle(x1, y1, x2, y2, x3, y3)
+5.2. circle
+An ellipse with equal width and height is a circle. By default, the first two parameters set the location, and the third and fourth parameters set the shape's width and height. If no height is specified, the value of width is used for both the width and height. If a negative height or width is specified, the absolute value is taken. The origin may be changed with the ellipseMode() function.
+ellipse(x, y, w, [h])
+
+5.3. rect
+5.4. edit code to re-create your drawing using p5.js
+6. Activity 4: Let's add the colours to our sketch
+function setup() {
+  createCanvas(400, 400);
+  rectMode(CORNERS);
+}
+
+function draw() {
+  background('lightgrey');
+  
+  stroke('grey');
+  strokeWeight(1);
+  line(100,0,100,400);
+  line(200,0,200,400);
+  line(300,0,300,400);
+  line(0,100,400,100);
+  line(0,200,400,200);
+  line(0,300,400,300);
+  
+  stroke('black');
+  strokeWeight(0);
+  fill('yellow');
+  triangle(150,25,290,100,150,175);
+  fill('red');
+  ellipse(75,275,100);
+  fill('blue');
+  rect(175,225,290,350);
+}
+6.1. Changing the colour of the canvas:
+    • Change the number in the background() command to the name of a colour (make sure to include the quotation marks around the colour.):
+background("pink");
+6.2. Changing the line colour: 
+    • Type in the following line on the line before the line() command:
+stroke("green");
+6.3. 8) Try changing the line thickness: 
+    • Type in the following line on the line before the line() command. Replace the word pixels with a number between 0 and 400:
+strokeWeight(pixels);
+6.4. 
+6.5. Filling a shape (triangle, rectangle, or ellipse) with a colour:
+    • Type in the following line on the line before the command to draw the shape:
+fill("purple");
+7. Activity: Let's add some randomness to the sketch
+What are things that we could have change each time the sketch is run?
+What were some of the decisions we had to make when we drew the sketch by hand?
+    • placement
+    • size
+    • colour
+8. Activity: Let's randomize placement
+9. Activity: Let's randomize size
+10. Activity: Let's randomize colour
+11. Activity: Let's animate the transition between sketches
+        ◦ easing
+11.1. 
+12. Activity: Let's draw some complex shapes
+    1. Using beginShape and endShape
+    2. Using vertex
+    3. Using curveVertex
+Activity: replace some of the basic shapes in a virtual drawing into complex shapes
+13. Activity: Let's parameterize our shapes
+    1. Looping with the draw function
+    2. Creating our own functions
+    3. Parameterizing our functions
+Activity: turn some of the complex shapes into functions and parameterize them so they change with each loop through the draw function
+14. What else can we do with p5.js?
+    1. Incorporating sketches into a web page
+    2. Working with the DOM of a web page
+    3. Playing sounds
+    4. Playing video
+    5. Accessing the webcam
+15. Appendix: Resources
+
