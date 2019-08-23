@@ -8,41 +8,8 @@ p5.js is:
 3.5. draw a line and move it using mouseX/mouseY
 
 
-3.6. Creating an account
-Go to https://editor.p5js.org/
-    1. Get started by going to http://editor.p5js.org/. You should see the p5.js editor:
-
-    2. Click on Sign up to create an account so you can save your sketches and share them with other people. You'll have to provide your email address and a create a password. If you don't want to sign up, you can still create sketches but you won't be able to save them.
-    3. Make sure the Auto-refresh check-box (next to the Stop button) is checked.
-    4. Press the Play button to make sure everything is working. A gray rectangle should appear to the right of the editing pane.
-3.7. What are the different parts of the editor for?
-We type commands into the Editor pane and then play them. The result of playing the commands is shown in the Preview pane. If the commands can't be played, messages about possible reasons why are shown in the Console pane.
-3.7.1. Menu bar
-3.7.2. Play bar
-3.7.3. Side pane (hidden by default)
-3.7.4. Edit pane
-3.7.4.1. setup
-  createCanvas(400, 400);
-3.7.4.2. draw
-  background(220);
-3.7.5. Preview pane
-3.7.6. Console pane
-3.8. What are the p5.js commands?
-A full reference to the p5.js commands can be found at https://p5js.org/reference/. They let us do things like
 4. Activity: Let's draw some lines
-function setup() {
-  createCanvas(400, 400);
-}
 
-function draw() {
-  background(220);
-  line(100,0,100,400);
-  line(200,0,200,400);
-  line(300,0,300,400);
-  line(0,100,400,100);
-  line(0,200,400,200);
-  line(0,300,400,300);
-}
 Lets pull all this together and create a simple sketch to draw a line:
     1. In the editor, place the cursor at the end of the line that says:
       background(220);

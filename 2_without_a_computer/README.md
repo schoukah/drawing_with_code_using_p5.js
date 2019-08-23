@@ -18,6 +18,9 @@ Using a pencil or pen on a blank piece of paper:
 
 ## Triangle, Square, Circle: A Psychological Test
 
-In 1923 Wassily Kandinsky circulated a questionnaire at the Bauhaus, asking respondents to fill in a triangle, square, and circle with the primary colors of red, yellow, and blue.
+In 1923 Wassily Kandinsky circulated a questionnaire at the Bauhaus,
+asking respondents to fill in a triangle, square, and circle
+with the primary colors of red, yellow, and blue.
 
-He hoped to discover a universal correspondence between form and color, embodied in the equation red=square, yellow=triangle, blue=circle.
+He hoped to discover a universal correspondence between form and color,
+embodied in the equation red=square, yellow=triangle, blue=circle.
