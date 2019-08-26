@@ -1,5 +1,7 @@
 # Drawing with Code without a Computer
 
+Take chances, make mistakes, get messy!
+
 Using a pencil or pen on a blank piece of paper:
 
     1. Draw a triangle anywhere on the page

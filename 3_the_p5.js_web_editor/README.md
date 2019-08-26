@@ -46,9 +46,16 @@ If the commands can't be played, messages about possible reasons why are shown i
 
 ### Edit pane
 
+The Edit pane is pre-filled with the functions of a skeleton of a p5.js sketch.
+All of our p5.js sketches will have at least two functions: setup() and draw().
+
 #### setup
 
     createCanvas(400, 400);
+
+- the first 400 represents the width of the canvas in pixels
+- the second 400 represents the height of the canvas in pixels
+- try changing them and see what happens
 
 #### draw
 

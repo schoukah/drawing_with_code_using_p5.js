@@ -10,12 +10,6 @@ p5.js is:
 
 4. Activity: Let's draw some lines
 
-Lets pull all this together and create a simple sketch to draw a line:
-    1. In the editor, place the cursor at the end of the line that says:
-      background(220);
-    • Press the Enter key to open up a new line.
-    1. Type in the following line replacing the letters purple with numbers between 0 and 400 (make sure to include the brackets, commas, and semicolon):
-line(x, y, x, y);
 4.1. Making the ends of the line follow the mouse
 We can change the length of the line by stopping the commands, changing the parameters to the line command, and then playing the commands again. Not very interesting.
 We can also change the length of the line while the commands are playing by having p5.js tell us the x and y coordinates of the mouse and using those values as the parameters to the line command:
@@ -28,34 +22,8 @@ function mouseClicked() {
   print(mouseX,mouseY);
 }
 5. Activity 3: Let's turn our sketches into code
-function setup() {
-  createCanvas(400, 400);
-  rectMode(CORNERS);
-}
 
-function draw() {
-  background(220);
 
-  line(100,0,100,400);
-  line(200,0,200,400);
-  line(300,0,300,400);
-  line(0,100,400,100);
-  line(0,200,400,200);
-  line(0,300,400,300);
-
-  triangle(150,25,290,100,150,175);
-  ellipse(75,275,100);
-  rect(175,225,290,350);
-}
-5.1. triangle
-A triangle is a plane created by connecting three points. The first two arguments specify the first point, the middle two arguments specify the second point, and the last two arguments specify the third point.
-triangle(x1, y1, x2, y2, x3, y3)
-5.2. circle
-An ellipse with equal width and height is a circle. By default, the first two parameters set the location, and the third and fourth parameters set the shape's width and height. If no height is specified, the value of width is used for both the width and height. If a negative height or width is specified, the absolute value is taken. The origin may be changed with the ellipseMode() function.
-ellipse(x, y, w, [h])
-
-5.3. rect
-5.4. edit code to re-create your drawing using p5.js
 6. Activity 4: Let's add the colours to our sketch
 function setup() {
   createCanvas(400, 400);
