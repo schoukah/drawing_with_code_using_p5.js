@@ -1,14 +1,14 @@
 # Drawing points and lines
 
-p5.js has built-in functions to draw points and lines.
+p5.js has built-in functions to draw points and lines, and to change their widths.
 
-## Points
+## Drawing points
 
     point(x, y)
 
 Draws a point, a coordinate in space at the dimension of one pixel.
 
-## What are x and y?
+### What are x and y?
 
 x and y are numbers that identify a point on the canvas.
 The top left corner of the canvas has the coordinates (0,0).
@@ -16,11 +16,17 @@ The top left corner of the canvas has the coordinates (0,0).
 - x is the horizontal distance of a pixel from the top left corner  
 - y is the vertical distance of a pixel from the top left corner
 
-## Lines
+## Drawing lines
 
     line(x1, y1, x2, y2)
 
 Draws a line, a direct path between two points.
+
+## Setting the thickness of lines
+
+    strokeWeight(weight)
+
+Sets the width of the stroke used for lines, points, and the border around shapes. All widths are set in units of pixels.
 
 ## Let's draw some lines
 

@@ -21,49 +21,7 @@ Sometimes it's useful to know what the values for mouseX and mouseY are. We can 
 function mouseClicked() {
   print(mouseX,mouseY);
 }
-5. Activity 3: Let's turn our sketches into code
 
-
-6. Activity 4: Let's add the colours to our sketch
-function setup() {
-  createCanvas(400, 400);
-  rectMode(CORNERS);
-}
-
-function draw() {
-  background('lightgrey');
-
-  stroke('grey');
-  strokeWeight(1);
-  line(100,0,100,400);
-  line(200,0,200,400);
-  line(300,0,300,400);
-  line(0,100,400,100);
-  line(0,200,400,200);
-  line(0,300,400,300);
-
-  stroke('black');
-  strokeWeight(0);
-  fill('yellow');
-  triangle(150,25,290,100,150,175);
-  fill('red');
-  ellipse(75,275,100);
-  fill('blue');
-  rect(175,225,290,350);
-}
-6.1. Changing the colour of the canvas:
-    • Change the number in the background() command to the name of a colour (make sure to include the quotation marks around the colour.):
-background("pink");
-6.2. Changing the line colour:
-    • Type in the following line on the line before the line() command:
-stroke("green");
-6.3. 8) Try changing the line thickness:
-    • Type in the following line on the line before the line() command. Replace the word pixels with a number between 0 and 400:
-strokeWeight(pixels);
-6.4.
-6.5. Filling a shape (triangle, rectangle, or ellipse) with a colour:
-    • Type in the following line on the line before the command to draw the shape:
-fill("purple");
 7. Activity: Let's add some randomness to the sketch
 What are things that we could have change each time the sketch is run?
 What were some of the decisions we had to make when we drew the sketch by hand?
