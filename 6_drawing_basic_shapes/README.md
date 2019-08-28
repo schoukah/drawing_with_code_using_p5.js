@@ -13,11 +13,11 @@ A triangle is a plane created by connecting three points. The first two argument
 
     ellipse(x, y, w, [h])
 
-An ellipse with equal width and height is a circle. By default, the first two parameters set the location, and the third and fourth parameters set the shape's width and height. If no height is specified, the value of width is used for both the width and height. If a negative height or width is specified, the absolute value is taken. The origin may be changed with the ellipseMode() function.
+An ellipse with equal width and height is a circle. By default, the first two parameters set the location of the centre, and the third and fourth parameters set the shape's width and height. If no height is specified, the value of width is used for both the width and height. If a negative height or width is specified, the absolute value is taken. The origin may be changed with the ellipseMode() function.
 
 ## rect
 
-    rect(30, 20, 55, 55);
+    rect(x, y, w, h);
 
 Draws a rectangle to the screen. A rectangle is a four-sided shape with every angle at ninety degrees. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the rectMode() function.
 

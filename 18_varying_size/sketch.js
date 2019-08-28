@@ -1,17 +1,14 @@
-console.log('hi');
-
 // variables for ellipse
-var circleX, circleY;
+var circleX, circleY, circleWidth, circleHeight;
 
 // variables for rect
-var squareX, squareY;
+var squareX, sqaureY, squareWidth, squareHeight;
 
 // variables for triangle
 var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
 
 function setup() {
   createCanvas(400, 400);
-  frameRate(1);
 }
 
 function draw() {
@@ -20,16 +17,13 @@ function draw() {
   drawGraph();
 
   // draw the circle
-  circleX = 100/2 + random(400-100);
-  circleY = 100/2 + random(400-100);
-  ellipse(circleX, circleY, 200, 200);
+  circleX = 75;
+  circleY = 275;
+  circleWidth = 100;
+  circleHeight = 100;
+  ellipse(circleX, circleY, circleWidth, circleHeight);
 
-  // draw the square
-  squareX = random(400-100);
-  squareY = random(400-100);
-  rect(squareX, squareY, 100, 100);
-
-  // draw the triangle
+// draw the triangle
   triangle1X = 150;
   triangle1Y = 25;
   triangle2X = 290;
@@ -38,6 +32,12 @@ function draw() {
   triangle3Y = 175;
   triangle(triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y);
 
+  // draw the square
+  squareX = 175;
+  sqaureY = 225;
+  squareWidth = 115;
+  squareHeight = 125;
+  rect(squareX, sqaureY, squareWidth, squareHeight);
 }
 
 function drawGraph() {

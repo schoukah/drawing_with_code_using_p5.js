@@ -8,20 +8,6 @@ p5.js is:
 3.5. draw a line and move it using mouseX/mouseY
 
 
-4. Activity: Let's draw some lines
-
-4.1. Making the ends of the line follow the mouse
-We can change the length of the line by stopping the commands, changing the parameters to the line command, and then playing the commands again. Not very interesting.
-We can also change the length of the line while the commands are playing by having p5.js tell us the x and y coordinates of the mouse and using those values as the parameters to the line command:
-    1. Change the last two numbers in the line() command to be the words mouseX and mouseY:
-line(x, y, mouseX, mouseY);
-    2. Play the sketch and move your mouse around the canvas to see what happens.
-4.2. Printing the mouse coordinates
-Sometimes it's useful to know what the values for mouseX and mouseY are. We can do that by adding another three lines to our sketch:
-function mouseClicked() {
-  print(mouseX,mouseY);
-}
-
 7. Activity: Let's add some randomness to the sketch
 What are things that we could have change each time the sketch is run?
 What were some of the decisions we had to make when we drew the sketch by hand?
