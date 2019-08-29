@@ -40,3 +40,10 @@ We can vary the placement of the square by replacing the x and y coordinates wit
 ## Varying the placement of the triangle
 
 We can vary the placement of the triangle by replacing the three x and y coordinates with variables, assigning random values to the first set of coordinates, and adjusting the offset
+
+## Advanced activities
+
+If you've finished the other activities, try these challenges:
+
+- Prevent shapes from spilling off the edge of the canvas
+- Prevent shapes from overlapping

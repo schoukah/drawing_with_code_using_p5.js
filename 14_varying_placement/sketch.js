@@ -7,7 +7,8 @@ var circleX, circleY;
 var squareX, squareY;
 
 // variables for triangle
-var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
+var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
+
 
 function setup() {
   createCanvas(400, 400);
@@ -20,8 +21,8 @@ function draw() {
   drawGraph();
 
   // draw the circle
-  circleX = 100/2 + random(400-100);
-  circleY = 100/2 + random(400-100);
+  circleX = 200/2 + random(400-200);
+  circleY = 200/2 + random(400-200);
   ellipse(circleX, circleY, 200, 200);
 
   // draw the square
@@ -30,14 +31,30 @@ function draw() {
   rect(squareX, squareY, 100, 100);
 
   // draw the triangle
-  triangle1X = 150;
-  triangle1Y = 25;
-  triangle2X = 290;
-  triangle2Y = 100;
-  triangle3X = 150;
-  triangle3Y = 175;
-  triangle(triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y);
+  triangleX1 = 150;
+  triangleY1 = 25;
+  triangleX2 = 290;
+  triangleY2 = 100;
+  triangleX3 = 150;
+  triangleY3 = 175;
+//  triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 
+  // draw the centroid of the triangle
+  triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
+  triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
+  strokeWeight(10);
+//  point(triangleCentreX, triangleCentreY);
+  strokeWeight(1);
+
+  triangleNewCentreX = random(400);
+  triangleNewCentreY = random(400);
+  triangleX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
+  triangleX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
+  triangleX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);
+  triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
+  triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
+  triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
+  triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }
 
 function drawGraph() {
