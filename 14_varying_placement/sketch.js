@@ -1,5 +1,3 @@
-console.log('hi');
-
 // variables for ellipse
 var circleX, circleY;
 
@@ -37,14 +35,10 @@ function draw() {
   triangleY2 = 100;
   triangleX3 = 150;
   triangleY3 = 175;
-//  triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 
-  // draw the centroid of the triangle
+  // find the centroid of the triangle
   triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
   triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-  strokeWeight(10);
-//  point(triangleCentreX, triangleCentreY);
-  strokeWeight(1);
 
   triangleNewCentreX = random(400);
   triangleNewCentreY = random(400);
