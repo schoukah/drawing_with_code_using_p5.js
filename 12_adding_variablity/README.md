@@ -32,7 +32,7 @@ We can use them in our sketches in place of using the numbers:
     - size
     - colour
 
-    ## Using variables
+## Using variables
 
 ## Mouse position variables
 
