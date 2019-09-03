@@ -47,6 +47,7 @@ function draw() {
 
   triangleNewCentreX = random(400);
   triangleNewCentreY = random(400);
+
   triangleX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
   triangleX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
   triangleX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);

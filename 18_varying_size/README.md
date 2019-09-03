@@ -11,6 +11,6 @@ We can vary the placement of the circle by replacing the x and y coordinates wit
     var circleY = random(400);
     ellipse(circleX,circleY);
 
-## Varying the placement of the triangle
-
 ## Varying the placement of the square
+
+## Varying the placement of the triangle
