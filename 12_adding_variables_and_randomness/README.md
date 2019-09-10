@@ -1,6 +1,6 @@
 # Making our sketches different each time they are drawn
 
-We can make our sketches different each time they are drawn by using the builtin random() function and variables.
+We can make our sketches different each time they are drawn by using variables and the builtin random() function.
 
 ## Variables
 

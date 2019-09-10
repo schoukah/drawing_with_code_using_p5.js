@@ -1,3 +1,9 @@
+/*
+
+Adding variables and randomness
+
+*/
+
 // variables for ellipse
 var circleX, circleY, circleWidth, circleHeight;
 
@@ -12,10 +18,13 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background('lightgrey');
 
   drawGraph();
-  
+
+  stroke('black');
+  strokeWeight(0);
+
   // draw the triangle
   triangle1X = 150;
   triangle1Y = 25;
@@ -23,6 +32,7 @@ function draw() {
   triangle2Y = 100;
   triangle3X = 150;
   triangle3Y = 175;
+  fill('yellow');
   triangle(triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y);
 
   // draw the circle
@@ -30,6 +40,7 @@ function draw() {
   circleY = 275;
   circleWidth = 100;
   circleHeight = 100;
+  fill('red');
   ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
@@ -37,10 +48,13 @@ function draw() {
   sqaureY = 225;
   squareWidth = 115;
   squareHeight = 125;
+  fill('blue');
   rect(squareX, sqaureY, squareWidth, squareHeight);
 }
 
 function drawGraph() {
+  stroke('grey');
+  strokeWeight(1);
   // draw a grid
   line(100, 0, 100, 400);
   line(200, 0, 200, 400);

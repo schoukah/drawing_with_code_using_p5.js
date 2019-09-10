@@ -1,6 +1,6 @@
 /*
 
-Varying the placement of shapes
+Varying the colour of shapes
 
 */
 
@@ -8,13 +8,17 @@ Varying the placement of shapes
 var circleX, circleY, circleWidth, circleHeight;
 
 // variables for rect
-var squareX, sqaureY, squareWidth, squareHeight;
+var squareX, squareY, squareWidth, squareHeight;
 
 // variables for triangle
-var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
+var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
+
+// variables for colour
+var colours = ['red','yellow','blue'];
 
 function setup() {
   createCanvas(400, 400);
+  fill(255,255,255,128);
   frameRate(1);
 }
 
@@ -25,18 +29,23 @@ function draw() {
 
   stroke('black');
   strokeWeight(0);
+  shuffleArray(colours);
 
   // draw the circle
-  circleX = 200/2 + random(400-200);
-  circleY = 200/2 + random(400-200);
-  fill('red');
-  ellipse(circleX, circleY, 200, 200);
+  circleWidth = random(400);
+  circleHeight = circleWidth;
+  circleX = circleWidth/2 + random(400-circleWidth);
+  circleY = circleHeight/2 + random(400-circleHeight);
+  fill(colours[0]);
+  ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
-  squareX = random(400-100);
-  squareY = random(400-100);
-  fill('blue');
-  rect(squareX, squareY, 100, 100);
+  squareWidth = random(400);
+  squareHeight = squareWidth;
+  squareX = random(400-squareWidth);
+  squareY = random(400-squareHeight);
+  fill(colours[1]);
+  rect(squareX, squareY, squareWidth, squareHeight);
 
   // draw the triangle
   triangleX1 = 150;
@@ -52,13 +61,14 @@ function draw() {
 
   triangleNewCentreX = random(400);
   triangleNewCentreY = random(400);
+
   triangleX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
   triangleX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
   triangleX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);
   triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
   triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
   triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
-  fill('yellow');
+  fill(colours[2]);
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }
 
@@ -72,4 +82,12 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
+}
+
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }

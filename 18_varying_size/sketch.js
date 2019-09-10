@@ -1,3 +1,9 @@
+/*
+
+Varying the size of shapes
+
+*/
+
 // variables for ellipse
 var circleX, circleY, circleWidth, circleHeight;
 
@@ -15,15 +21,19 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background('lightgrey');
 
   drawGraph();
+
+  stroke('black');
+  strokeWeight(0);
 
   // draw the circle
   circleWidth = random(400);
   circleHeight = circleWidth;
   circleX = circleWidth/2 + random(400-circleWidth);
   circleY = circleHeight/2 + random(400-circleHeight);
+  fill('red');
   ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
@@ -31,6 +41,7 @@ function draw() {
   squareHeight = squareWidth;
   squareX = random(400-squareWidth);
   squareY = random(400-squareHeight);
+  fill('blue');
   rect(squareX, squareY, squareWidth, squareHeight);
 
   // draw the triangle
@@ -54,10 +65,13 @@ function draw() {
   triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
   triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
   triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
+  fill('yellow');
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }
 
 function drawGraph() {
+  stroke('grey');
+  strokeWeight(1);
   // draw a grid
   line(100, 0, 100, 400);
   line(200, 0, 200, 400);
