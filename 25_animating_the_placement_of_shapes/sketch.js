@@ -1,12 +1,12 @@
 /*
 
-Varying the colour of shapes
+Animating the placement of shapes
 
 */
 
 // variables for ellipse
-var circleXOld, circleYOld, circleWidthOld, circleHeightOld;
-var circleXNew, circleYNew, circleWidthNew, circleHeightNew;
+var circleXStart, circleYStart, circleWidthStart, circleHeightStart;
+var circleXStop, circleYStop, circleWidthStop, circleHeightStop;
 
 // variables for rect
 var squareX, squareY, squareWidth, squareHeight;
@@ -18,24 +18,27 @@ var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
 var colours = ['red','yellow','blue'];
 shuffleArray(colours);
 
-var isDone = 0;
+var isDone = false;
 
 function setup() {
   createCanvas(400, 400);
   fill(255,255,255,128);
-//  frameRate(1);
-  circleWidthOld = random(200);
-  circleHeightOld = circleWidthOld;
-  circleXOld = int(circleWidthOld/2 + random(400-circleWidthOld));
-  circleYOld = int(circleHeightOld/2 + random(400-circleHeightOld));
-  circleWidthNew = random(200);
-  circleHeightNew = circleWidthNew;
-  circleXNew = int(circleWidthNew/2 + random(400-circleWidthNew));
-  circleYNew = int(circleHeightNew/2 + random(400-circleHeightNew));
+  //  frameRate(1);
+
+  circleWidthStart = random(200);
+  circleHeightStart = circleWidthStart;
+  circleXStart = int(circleWidthStart/2 + random(400-circleWidthStart));
+  circleYStart = int(circleHeightStart/2 + random(400-circleHeightStart));
+  circleWidthStop = random(200);
+  circleHeightStop = circleWidthStop;
+  circleXStop = int(circleWidthStop/2 + random(400-circleWidthStop));
+  circleYStop = int(circleHeightStop/2 + random(400-circleHeightStop));
+
   squareWidth = random(200);
   squareHeight = squareWidth;
   squareX = random(400-squareWidth);
   squareY = random(400-squareHeight);
+
   triangleX1 = 150;
   triangleY1 = 25;
   triangleX2 = 290;
@@ -68,23 +71,28 @@ function draw() {
   strokeWeight(0);
 
   // draw the circle
-
-
   fill(colours[0]);
-    ellipse(circleXOld, circleYOld, circleWidthOld, circleHeightOld);
-  circleXOld += (circleXNew-circleXOld)/10;;
-  circleYOld += (circleYNew-circleYOld)/10;
-  console.log(circleXOld, circleYOld);
-
+  ellipse(circleXStart, circleYStart, circleWidthStart, circleHeightStart);
+  circleXStart += (circleXStop-circleXStart)/10;
+  circleYStart += (circleYStop-circleYStart)/10;
+  if (circleXStop - circleXStart < 1 && circleYStop - circleYStart < 1) {
+    isDone = true;
+  }
+  console.log(circleXStart, circleXStop);
 
   // draw the square
   fill(colours[1]);
   rect(squareX, squareY, squareWidth, squareHeight);
 
   // draw the triangle
-
   fill(colours[2]);
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
+
+  if (isDone === true) {
+    circleXStop = int(circleWidthStop/2 + random(400-circleWidthStop));
+    circleYStop = int(circleHeightStop/2 + random(400-circleHeightStop));
+    isDone = false;
+  }
 
 }
 
