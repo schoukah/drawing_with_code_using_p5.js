@@ -9,7 +9,8 @@ var circleXStart, circleYStart, circleWidthStart, circleHeightStart;
 var circleXStop, circleYStop, circleWidthStop, circleHeightStop;
 
 // variables for rect
-var squareX, squareY, squareWidth, squareHeight;
+var squareXStart, squareYStart, squareWidthStart, squareHeightStart;
+var squareXStop, squareYStop, squareWidthStop, squareHeightStop;
 
 // variables for triangle
 var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
@@ -18,12 +19,13 @@ var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
 var colours = ['red','yellow','blue'];
 shuffleArray(colours);
 
-var isDone = false;
+var circleIsDone = false;
+var squareIsDone = false;
+var triangleIsDone = false;
 
 function setup() {
   createCanvas(400, 400);
   fill(255,255,255,128);
-  //  frameRate(1);
 
   circleWidthStart = random(200);
   circleHeightStart = circleWidthStart;
@@ -34,10 +36,14 @@ function setup() {
   circleXStop = int(circleWidthStop/2 + random(400-circleWidthStop));
   circleYStop = int(circleHeightStop/2 + random(400-circleHeightStop));
 
-  squareWidth = random(200);
-  squareHeight = squareWidth;
-  squareX = random(400-squareWidth);
-  squareY = random(400-squareHeight);
+  squareWidthStart = random(200);
+  squareHeightStart = squareWidthStart;
+  squareXStart = int(squareWidthStart/2 + random(400-squareWidthStart));
+  squareYStart = int(squareHeightStart/2 + random(400-squareHeightStart));
+  squareWidthStop = random(200);
+  squareHeightStop = squareWidthStop;
+  squareXStop = int(squareWidthStop/2 + random(400-squareWidthStop));
+  squareYStop = int(squareHeightStop/2 + random(400-squareHeightStop));
 
   triangleX1 = 150;
   triangleY1 = 25;
@@ -59,7 +65,6 @@ function setup() {
   triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
   triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
   triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
-
 }
 
 function draw() {
@@ -76,24 +81,32 @@ function draw() {
   circleXStart += (circleXStop-circleXStart)/10;
   circleYStart += (circleYStop-circleYStart)/10;
   if (circleXStop - circleXStart < 1 && circleYStop - circleYStart < 1) {
-    isDone = true;
+    circleIsDone = true;
   }
-  console.log(circleXStart, circleXStop);
 
   // draw the square
   fill(colours[1]);
-  rect(squareX, squareY, squareWidth, squareHeight);
+  rect(squareXStart, squareYStart, squareWidthStart, squareHeightStart);
+  squareXStart += (squareXStop-squareXStart)/10;
+  squareYStart += (squareYStop-squareYStart)/10;
+  if (squareXStop - squareXStart < 1 && squareYStop - squareYStart < 1) {
+    squareIsDone = true;
+  }
 
   // draw the triangle
   fill(colours[2]);
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 
-  if (isDone === true) {
+  // if the shapes are in their new positions
+  // generate new stop coordinates and start again
+  if (circleIsDone === true && squareIsDone === true) {
     circleXStop = int(circleWidthStop/2 + random(400-circleWidthStop));
     circleYStop = int(circleHeightStop/2 + random(400-circleHeightStop));
-    isDone = false;
+    squareXStop = int(squareWidthStop/2 + random(400-squareWidthStop));
+    squareYStop = int(squareHeightStop/2 + random(400-squareHeightStop));
+    circleIsDone = false;
+    squareIsDone = false;
   }
-
 }
 
 function drawGraph() {
