@@ -1,6 +1,6 @@
 /*
 
-Adding variables and randomness
+Adding variables
 
 */
 
@@ -11,7 +11,7 @@ var circleX, circleY, circleWidth, circleHeight;
 var squareX, sqaureY, squareWidth, squareHeight;
 
 // variables for triangle
-var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
+var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
 
 function setup() {
   createCanvas(400, 400);
@@ -24,16 +24,6 @@ function draw() {
 
   stroke('black');
   strokeWeight(0);
-
-  // draw the triangle
-  triangle1X = 150;
-  triangle1Y = 25;
-  triangle2X = 290;
-  triangle2Y = 100;
-  triangle3X = 150;
-  triangle3Y = 175;
-  fill('yellow');
-  triangle(triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y);
 
   // draw the circle
   circleX = 75;
@@ -50,6 +40,16 @@ function draw() {
   squareHeight = 125;
   fill('blue');
   rect(squareX, sqaureY, squareWidth, squareHeight);
+
+  // draw the triangle
+  triangleX1 = 150;
+  triangleY1 = 25;
+  triangleX2 = triangleX1 + (290 - triangleX1);
+  triangleY2 = triangleY1 + (100 - triangleY1);
+  triangleX3 = triangleX1 + (150 - triangleX1);
+  triangleY3 = triangleY1 + (175 - triangleY1);
+  fill('yellow');
+  triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }
 
 function drawGraph() {

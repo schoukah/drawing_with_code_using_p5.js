@@ -11,7 +11,7 @@ var circleX, circleY, circleWidth, circleHeight;
 var squareX, sqaureY, squareWidth, squareHeight;
 
 // variables for triangle
-var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
+var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
 
 function setup() {
   createCanvas(400, 400);
@@ -39,13 +39,14 @@ function draw() {
   rect(squareX, squareY, 100, 100);
 
   // draw the triangle
-  triangleX1 = 150;
-  triangleY1 = 25;
-  triangleX2 = 290;
-  triangleY2 = 100;
-  triangleX3 = 150;
-  triangleY3 = 175;
+  triangleX1 = random(400);
+  triangleY1 = random(400);
+  triangleX2 = triangleX1 + (290 - triangleX1);
+  triangleY2 = triangleY1 + (100 - triangleY1);
+  triangleX3 = triangleX1 + (150 - triangleX1);
+  triangleY3 = triangleY1 + (175 - triangleY1);
 
+/*
   // find the centroid of the triangle
   triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
   triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
@@ -58,6 +59,9 @@ function draw() {
   triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
   triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
   triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
+
+  */
+
   fill('yellow');
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }

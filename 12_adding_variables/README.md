@@ -1,13 +1,17 @@
-# Making our sketches different each time they are drawn
+# Adding variables
 
 We can make our sketches different each time they are drawn by using variables and the builtin random() function.
-
-## Variables
 
 A variable is a name that represents a value.
 
     var x = 200;
     var y = 200;
+
+## Built-in variables
+
+### width and height  
+
+### mouseX and mouseY
 
 ## random()
 
