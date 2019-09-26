@@ -13,7 +13,6 @@ var squareX, squareY, squareWidth, squareHeight;
 // variables for triangle
 var triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
 
-
 function setup() {
   createCanvas(400, 400);
   fill(255,255,255,128);
@@ -56,15 +55,23 @@ function draw() {
   triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
   triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
 
-  triangleNewCentreX = random(400);
-  triangleNewCentreY = random(400);
+  // generate a random point to be the new centroid
+  triangleNewCentreX = random(100,300);
+  triangleNewCentreY = random(100,300);
 
-  triangleX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
-  triangleX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
-  triangleX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);
-  triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
-  triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
-  triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
+  // generate a number to scale the distance between the vertices and the new centroid
+  // random value between 0.1 and the shortest distance between the centroid and the four sides
+  var triangleScale = random(0.1,2);
+console.log(triangleScale);
+  // calculate the coordinates of the new triangle
+  triangleX1 = (triangleX1 + (triangleNewCentreX - triangleCentreX)) * triangleScale;
+  triangleX2 = (triangleX2 + (triangleNewCentreX - triangleCentreX)) * triangleScale;
+  triangleX3 = (triangleX3 + (triangleNewCentreX - triangleCentreX)) * triangleScale;
+  triangleY1 = (triangleY1 + (triangleNewCentreY - triangleCentreY)) * triangleScale;
+  triangleY2 = (triangleY2 + (triangleNewCentreY - triangleCentreY)) * triangleScale;
+  triangleY3 = (triangleY3 + (triangleNewCentreY - triangleCentreY)) * triangleScale;
+
+  // draw the triangle
   fill('yellow');
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }

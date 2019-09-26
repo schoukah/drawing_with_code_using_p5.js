@@ -44,10 +44,10 @@ function draw() {
   // draw the triangle
   triangleX1 = 150;
   triangleY1 = 25;
-  triangleX2 = triangleX1 + (290 - triangleX1);
-  triangleY2 = triangleY1 + (100 - triangleY1);
-  triangleX3 = triangleX1 + (150 - triangleX1);
-  triangleY3 = triangleY1 + (175 - triangleY1);
+  triangleX2 = 290;
+  triangleY2 = 100;
+  triangleX3 = 150;
+  triangleY3 = 175;
   fill('yellow');
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }

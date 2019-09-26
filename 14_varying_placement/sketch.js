@@ -27,10 +27,10 @@ function draw() {
   strokeWeight(0);
 
   // draw the circle
-  circleX = 200/2 + random(400-200);
-  circleY = 200/2 + random(400-200);
+  circleX = 200/2 + random(400-100);
+  circleY = 200/2 + random(400-100);
   fill('red');
-  ellipse(circleX, circleY, 200, 200);
+  ellipse(circleX, circleY, 100, 100);
 
   // draw the square
   squareX = random(400-100);
@@ -39,14 +39,13 @@ function draw() {
   rect(squareX, squareY, 100, 100);
 
   // draw the triangle
-  triangleX1 = random(400);
-  triangleY1 = random(400);
-  triangleX2 = triangleX1 + (290 - triangleX1);
-  triangleY2 = triangleY1 + (100 - triangleY1);
-  triangleX3 = triangleX1 + (150 - triangleX1);
-  triangleY3 = triangleY1 + (175 - triangleY1);
+  triangleX1 = 150;
+  triangleY1 = 25;
+  triangleX2 = 290;
+  triangleY2 = 100;
+  triangleX3 = 150;
+  triangleY3 = 175;
 
-/*
   // find the centroid of the triangle
   triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
   triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
@@ -59,8 +58,6 @@ function draw() {
   triangleY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
   triangleY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
   triangleY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
-
-  */
 
   fill('yellow');
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
