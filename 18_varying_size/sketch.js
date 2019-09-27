@@ -28,7 +28,7 @@ function draw() {
   strokeWeight(0);
 
   // draw the circle
-  circleWidth = random(400);
+  circleWidth = random(200);
   circleHeight = circleWidth;
   circleX = circleWidth/2 + random(400-circleWidth);
   circleY = circleHeight/2 + random(400-circleHeight);
@@ -36,7 +36,7 @@ function draw() {
   ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
-  squareWidth = random(400);
+  squareWidth = random(200);
   squareHeight = squareWidth;
   squareX = random(400-squareWidth);
   squareY = random(400-squareHeight);
@@ -62,7 +62,7 @@ function draw() {
   // generate a number to scale the distance between the vertices and the new centroid
   // random value between 0.1 and the shortest distance between the centroid and the four sides
   var triangleScale = random(0.1,2);
-console.log(triangleScale);
+
   // calculate the coordinates of the new triangle
   triangleX1 = (triangleX1 + (triangleNewCentreX - triangleCentreX)) * triangleScale;
   triangleX2 = (triangleX2 + (triangleNewCentreX - triangleCentreX)) * triangleScale;

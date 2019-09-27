@@ -8,3 +8,5 @@ and using a function to shuffle the contents of the array on each run.
 
 
 ## Using functions
+
+We can use a freely available function to shuffle our array.
