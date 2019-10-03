@@ -6,9 +6,6 @@ Drawing the grid
 
 function setup() {
   createCanvas(400, 400);
-}
-
-function draw() {
   background(220);
 
   // draw the grid
@@ -18,4 +15,7 @@ function draw() {
   line(0,100,400,100);
   line(0,200,400,200);
   line(0,300,400,300);
+}
+
+function draw() {
 }

@@ -131,6 +131,7 @@ function draw() {
     circleIsDone = false;
     squareIsDone = false;
   }
+  frameRate(24);
 }
 
 function drawGraph() {

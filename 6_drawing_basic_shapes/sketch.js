@@ -6,10 +6,6 @@ Drawing the basic shapes
 
 function setup() {
   createCanvas(400, 400);
-  rectMode(CORNERS); // change the way the parameters to rect() are interpreted
-}
-
-function draw() {
   background(220);
 
   // draw the grid
@@ -20,11 +16,17 @@ function draw() {
   line(0,200,400,200);
   line(0,300,400,300);
 
+  // change the way the parameters to rect() are interpreted
+  rectMode(CORNERS);
+}
+
+function draw() {
+
   // draw the circle
   ellipse(74,274,99);
 
   // draw the square
-//  rect(175,225,115,125);
+  //  rect(175,225,115,125);
   rect(175,225,290,350);
 
   // draw the triangle

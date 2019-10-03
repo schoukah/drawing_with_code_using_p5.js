@@ -6,10 +6,6 @@ Adding colour to the shapes
 
 function setup() {
   createCanvas(400, 400);
-  rectMode(CORNERS); // change the way the parameters to rect() are interpreted
-}
-
-function draw() {
   background('lightgrey');
 
   // set the colour and line thickness for the grid
@@ -23,6 +19,12 @@ function draw() {
   line(0,100,400,100);
   line(0,200,400,200);
   line(0,300,400,300);
+
+  // change the way the parameters to rect() are interpreted
+  rectMode(CORNERS);
+}
+
+function draw() {
 
   // set the colour and line thickness for the shapes
   stroke('black');
