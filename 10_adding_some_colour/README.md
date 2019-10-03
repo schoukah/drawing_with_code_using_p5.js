@@ -26,7 +26,7 @@ Sets the color used to draw lines and borders around shapes. All shapes drawn af
 
     fill(colour_string)
 
-Sets the color used to fill shapes. All shapes drawn after the fill command will be filled with the specified colour.
+Sets the colour used to fill shapes. All shapes drawn after the fill command will be filled with the specified colour.
 
 ## Add the colours from your drawing to your sketch
 

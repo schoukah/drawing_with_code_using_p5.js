@@ -1,14 +1,16 @@
 /*
 
-Adding randomness
+Varying the placement of the circle and the square
 
 */
 
 // variables for ellipse
-var circleX, circleY, circleWidth, circleHeight;
+let circleX = 75;
+let circleY = 275;
 
 // variables for rect
-var squareX, sqaureY, squareWidth, squareHeight;
+let squareX = 175;
+let squareY = 225;
 
 // variables for triangle
 var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
@@ -26,20 +28,12 @@ function draw() {
   strokeWeight(0);
 
   // draw the circle
-  circleX = 75;
-  circleY = 275;
-  circleWidth = 100;
-  circleHeight = 100;
   fill('red');
-  ellipse(circleX, circleY, circleWidth, circleHeight);
+  ellipse(random(circleX), random(circleY), 100, 100);
 
   // draw the square
-  squareX = 175;
-  sqaureY = 225;
-  squareWidth = 115;
-  squareHeight = 125;
   fill('blue');
-  rect(squareX, sqaureY, squareWidth, squareHeight);
+  rect(random(squareX), random(squareY), 115, 125);
 
   // draw the triangle
   triangle1X = 150;

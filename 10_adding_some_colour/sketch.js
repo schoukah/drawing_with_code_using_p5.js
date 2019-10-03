@@ -20,14 +20,11 @@ function setup() {
   line(0,200,400,200);
   line(0,300,400,300);
 
-  // change the way the parameters to rect() are interpreted
-  rectMode(CORNERS);
 }
 
 function draw() {
 
-  // set the colour and line thickness for the shapes
-  stroke('black');
+  // don't draw a line around the shapes
   strokeWeight(0);
 
   // draw the circle
@@ -36,7 +33,7 @@ function draw() {
 
   // draw the square
   fill('blue');
-  rect(175,225,290,350);
+  rect(175,225,290-175,350-225);
 
   // draw the triangle
   fill('yellow');
