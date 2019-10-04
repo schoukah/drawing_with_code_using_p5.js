@@ -1,6 +1,6 @@
 /*
 
-Varying the colour of shapes
+Varying the size of the triangle
 
 */
 
@@ -30,9 +30,6 @@ let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
 let triangleNewCentreX, triangleNewCentreY, triangleNewX1, triangleNewY1, triangleNewX2, triangleNewY2, triangleNewX3, triangleNewY3;
 let triangleScalingFactor;
 
-// variables for colour
-let colours = ['red','yellow','blue'];
-
 function setup() {
   createCanvas(400, 400);
 }
@@ -44,10 +41,9 @@ function draw() {
 
   stroke('black');
   strokeWeight(0);
-  shuffleArray(colours);
 
   // draw the circle
-  fill(colours[0]);
+  fill('red');
   circleNewX = random(circleX);
   circleNewY = random(circleY);
   circleNewWidth = random(circleWidth);
@@ -55,15 +51,13 @@ function draw() {
   ellipse(circleNewX, circleNewY, circleNewWidth, circleNewHeight);
 
   // draw the square
-  fill(colours[1]);
+  fill('blue');
   squareNewX = random(squareX);
   squareNewY = random(squareY);
   squareNewWidth = random(squareWidth);
   squareNewHeight = squareNewWidth;
   rect(squareNewX, squareNewY, squareNewWidth, squareNewHeight);
 
-  // draw the triangle
-  fill(colours[2]);
   // draw the triangle
   // generate a random point to be the new centroid
   triangleNewCentreX = random(100,300);
@@ -79,9 +73,9 @@ function draw() {
   // generate a number to scale the distance between the vertices and the new centroid
   // to be between half as large or twice as large as the original
   triangleScalingFactor = random(0.5,2);
-  triangle(triangleNewX1 * triangleScalingFactor, triangleNewY1 * triangleScalingFactor, triangleNewX2 * triangleScalingFactor, triangleNewY2 * triangleScalingFactor, triangleNewX3 * triangleScalingFactor, triangleNewY3 * triangleScalingFactor);
 
-frameRate(1);
+  fill('yellow');
+  triangle(triangleNewX1 * triangleScalingFactor, triangleNewY1 * triangleScalingFactor, triangleNewX2 * triangleScalingFactor, triangleNewY2 * triangleScalingFactor, triangleNewX3 * triangleScalingFactor, triangleNewY3 * triangleScalingFactor);
 }
 
 function drawGraph() {
@@ -94,12 +88,4 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
-}
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = floor(random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
 }

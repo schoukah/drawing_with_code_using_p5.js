@@ -62,7 +62,7 @@ function draw() {
   // assign the random values to variables because we need to use them multiple times
   triangleNewCentreX = int(random(400));
   triangleNewCentreY = int(random(400));
-  console.log(triangleNewCentreX,triangleNewCentreY, triangleCentreX, triangleCentreY);
+  // calculate the coordinates of the new triangle
   triangleNewX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
   triangleNewY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
   triangleNewX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
