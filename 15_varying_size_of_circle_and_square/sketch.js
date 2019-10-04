@@ -1,16 +1,22 @@
 /*
 
-Varying the placment of the triangle
+Varying the size of the circle and square
 
 */
 
 // variables for ellipse
 let circleX = 75;
 let circleY = 275;
+let circleWidth = 100;
+let circleHeight = circleWidth;
+let circleNewX, circleNewY, circleNewWidth, circleNewHeight;
 
 // variables for rect
 let squareX = 175;
 let squareY = 225;
+let squareWidth = 100;
+let squareHeight = squareWidth;
+let squareNewX, squareNewY, squareNewWidth, squareNewHeight;
 
 // variables for triangle
 let triangleX1 = 150;
@@ -29,7 +35,6 @@ function setup() {
 }
 
 function draw() {
-  frameRate(1);
   background('lightgrey');
 
   drawGraph();
@@ -39,13 +44,22 @@ function draw() {
 
   // draw the circle
   fill('red');
-  ellipse(random(circleX), random(circleY), 100, 100);
+  circleNewX = random(circleX);
+  circleNewY = random(circleY);
+  circleNewWidth = random(circleWidth);
+  circleNewHeight = circleNewWidth;
+  ellipse(circleNewX, circleNewY, circleNewWidth, circleNewHeight);
 
   // draw the square
   fill('blue');
-  rect(random(squareX), random(squareY), 115, 125);
+  squareNewX = random(squareX);
+  squareNewY = random(squareY);
+  squareNewWidth = random(squareWidth);
+  squareNewHeight = squareNewWidth;
+  rect(squareNewX, squareNewY, squareNewWidth, squareNewHeight);
 
   // draw the triangle
+  // assign the random values to variables because we need to use them multiple times
   triangleNewCentreX = int(random(400));
   triangleNewCentreY = int(random(400));
   console.log(triangleNewCentreX,triangleNewCentreY, triangleCentreX, triangleCentreY);
