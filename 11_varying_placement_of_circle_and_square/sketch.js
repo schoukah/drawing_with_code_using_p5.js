@@ -12,11 +12,9 @@ let circleY = 275;
 let squareX = 175;
 let squareY = 225;
 
-// variables for triangle
-var triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y;
-
 function setup() {
   createCanvas(400, 400);
+  frameRate(1);
 }
 
 function draw() {
@@ -29,21 +27,19 @@ function draw() {
 
   // draw the circle
   fill('red');
-  ellipse(random(circleX), random(circleY), 100, 100);
+  circleX = random(width);
+  circleY = random(height);
+  ellipse(circleX, circleY, 100, 100);
 
   // draw the square
   fill('blue');
-  rect(random(squareX), random(squareY), 115, 125);
+  squareX = random(width);
+  squareY = random(height);
+  rect(squareX, squareY, 115, 125);
 
   // draw the triangle
-  triangle1X = 150;
-  triangle1Y = 25;
-  triangle2X = 290;
-  triangle2Y = 100;
-  triangle3X = 150;
-  triangle3Y = 175;
   fill('yellow');
-  triangle(triangle1X, triangle1Y, triangle2X, triangle2Y, triangle3X, triangle3Y);
+  triangle(150,25,290,100,150,175);
 
 }
 

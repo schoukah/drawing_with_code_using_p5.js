@@ -19,13 +19,14 @@ let triangleX2 = 290;
 let triangleY2 = 100;
 let triangleX3 = 150;
 let triangleY3 = 175;
+// calculate the centroid of the triangle
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-let triangleNewCentreX, triangleNewCentreY, triangleNewX1, triangleNewY1, triangleNewX2, triangleNewY2, triangleNewX3, triangleNewY3;
-
+let triangleCentreXNew, triangleCentreYNew;
 
 function setup() {
   createCanvas(400, 400);
+  frameRate(1);
 }
 
 function draw() {
@@ -38,25 +39,31 @@ function draw() {
 
   // draw the circle
   fill('red');
+  circleX = random(width);
+  circleY = random(height);
   ellipse(random(circleX), random(circleY), 100, 100);
 
   // draw the square
   fill('blue');
+  squareX = random(width);
+  squareY = random(height);
   rect(random(squareX), random(squareY), 115, 125);
 
   // draw the triangle
-  // assign the random values to variables because we need to use them multiple times
-  triangleNewCentreX = int(random(400));
-  triangleNewCentreY = int(random(400));
-  console.log(triangleNewCentreX,triangleNewCentreY, triangleCentreX, triangleCentreY);
-  triangleNewX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
-  triangleNewX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
-  triangleNewX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
   fill('yellow');
-  triangle(triangleNewX1, triangleNewY1, triangleNewX2, triangleNewY2, triangleNewX3, triangleNewY3);
+  // generate random coordinates for the new centroid
+  triangleCentreXNew = int(random(400));
+  triangleCentreYNew = int(random(400));
+  // calculate new x and y coordinates based on the new centroid
+  triangleX1 = triangleX1 + (triangleCentreXNew - triangleCentreX);
+  triangleY1 = triangleY1 + (triangleCentreYNew - triangleCentreY);
+  triangleX2 = triangleX2 + (triangleCentreXNew - triangleCentreX);
+  triangleY2 = triangleY2 + (triangleCentreYNew - triangleCentreY);
+  triangleX3 = triangleX3 + (triangleCentreXNew - triangleCentreX);
+  triangleY3 = triangleY3 + (triangleCentreYNew - triangleCentreY);
+  triangleCentreX = triangleCentreXNew;
+  triangleCentreY = triangleCentreYNew;
+  triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
 }
 
 function drawGraph() {

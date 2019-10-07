@@ -28,7 +28,7 @@ let triangleY3 = 175;
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
 let triangleCentreXNew, triangleCentreYNew, triangleX1New, triangleY1New, triangleX2New, triangleY2New, triangleX3New, triangleY3New;
-let triangleScalingFactor;
+let triangleScalingFactor =1;
 
 // variables for colour
 let colours = ['red','yellow','blue'];
