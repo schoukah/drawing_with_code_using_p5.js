@@ -9,14 +9,12 @@ let circleX = 75;
 let circleY = 275;
 let circleWidth = 100;
 let circleHeight = circleWidth;
-let circleNewX, circleNewY, circleNewWidth, circleNewHeight;
 
 // variables for rect
 let squareX = 175;
 let squareY = 225;
 let squareWidth = 100;
 let squareHeight = squareWidth;
-let squareNewX, squareNewY, squareNewWidth, squareNewHeight;
 
 // variables for triangle
 let triangleX1 = 150;
@@ -25,13 +23,15 @@ let triangleX2 = 290;
 let triangleY2 = 100;
 let triangleX3 = 150;
 let triangleY3 = 175;
+// calculate the centroid of the triangle
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-let triangleNewCentreX, triangleNewCentreY, triangleNewX1, triangleNewY1, triangleNewX2, triangleNewY2, triangleNewX3, triangleNewY3;
-let triangleScalingFactor;
+let triangleCentreXNew, triangleCentreYNew;
+let triangleScalingFactor = 1;
 
 function setup() {
   createCanvas(400, 400);
+  frameRate(1);
 }
 
 function draw() {
@@ -44,38 +44,37 @@ function draw() {
 
   // draw the circle
   fill('red');
-  circleNewX = random(circleX);
-  circleNewY = random(circleY);
-  circleNewWidth = random(circleWidth);
-  circleNewHeight = circleNewWidth;
-  ellipse(circleNewX, circleNewY, circleNewWidth, circleNewHeight);
+  circleX = random(width);
+  circleY = random(height);
+  circleWidth = random(width);
+  circleHeight = circleWidth;
+  ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
   fill('blue');
-  squareNewX = random(squareX);
-  squareNewY = random(squareY);
-  squareNewWidth = random(squareWidth);
-  squareNewHeight = squareNewWidth;
-  rect(squareNewX, squareNewY, squareNewWidth, squareNewHeight);
+  squareX = random(width);
+  squareY = random(height);
+  squareWidth = random(width);
+  squareHeight = squareWidth;
+  rect(squareX, squareY, squareWidth, squareHeight);
 
   // draw the triangle
-  // generate a random point to be the new centroid
-  triangleNewCentreX = random(100,300);
-  triangleNewCentreY = random(100,300);
-  // calculate the coordinates of the new triangle
-  triangleNewX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
-  triangleNewX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
-  triangleNewX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
-
-  // generate a number to scale the distance between the vertices and the new centroid
-  // to be between half as large or twice as large as the original
-  triangleScalingFactor = random(0.5,2);
-
   fill('yellow');
-  triangle(triangleNewX1 * triangleScalingFactor, triangleNewY1 * triangleScalingFactor, triangleNewX2 * triangleScalingFactor, triangleNewY2 * triangleScalingFactor, triangleNewX3 * triangleScalingFactor, triangleNewY3 * triangleScalingFactor);
+  // generate random coordinates for the new centroid
+  triangleCentreXNew = int(random(width-100));
+  triangleCentreYNew = int(random(height));
+  // calculate new x and y coordinates based on the new centroid
+  triangleX1 = triangleX1 + (triangleCentreXNew - triangleCentreX);
+  triangleY1 = triangleY1 + (triangleCentreYNew - triangleCentreY);
+  triangleX2 = triangleX2 + (triangleCentreXNew - triangleCentreX);
+  triangleY2 = triangleY2 + (triangleCentreYNew - triangleCentreY);
+  triangleX3 = triangleX3 + (triangleCentreXNew - triangleCentreX);
+  triangleY3 = triangleY3 + (triangleCentreYNew - triangleCentreY);
+  triangleCentreX = triangleCentreXNew;
+  triangleCentreY = triangleCentreYNew;
+  console.log(triangleCentreX,triangleCentreY);
+  triangleScalingFactor = random(.5,3);
+  triangle(triangleX1 * triangleScalingFactor, triangleY1 * triangleScalingFactor, triangleX2 * triangleScalingFactor, triangleY2 * triangleScalingFactor, triangleX3 * triangleScalingFactor, triangleY3 * triangleScalingFactor);
 }
 
 function drawGraph() {

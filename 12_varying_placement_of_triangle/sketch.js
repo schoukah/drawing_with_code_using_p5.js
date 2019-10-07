@@ -41,19 +41,19 @@ function draw() {
   fill('red');
   circleX = random(width);
   circleY = random(height);
-  ellipse(random(circleX), random(circleY), 100, 100);
+  ellipse(circleX, circleY, 100, 100);
 
   // draw the square
   fill('blue');
   squareX = random(width);
   squareY = random(height);
-  rect(random(squareX), random(squareY), 115, 125);
+  rect(squareX, squareY, 115, 125);
 
   // draw the triangle
   fill('yellow');
   // generate random coordinates for the new centroid
-  triangleCentreXNew = int(random(400));
-  triangleCentreYNew = int(random(400));
+  triangleCentreXNew = int(random(width));
+  triangleCentreYNew = int(random(height));
   // calculate new x and y coordinates based on the new centroid
   triangleX1 = triangleX1 + (triangleCentreXNew - triangleCentreX);
   triangleY1 = triangleY1 + (triangleCentreYNew - triangleCentreY);
