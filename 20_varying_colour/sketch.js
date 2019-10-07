@@ -9,14 +9,14 @@ let circleX = 75;
 let circleY = 275;
 let circleWidth = 100;
 let circleHeight = circleWidth;
-let circleNewX, circleNewY, circleNewWidth, circleNewHeight;
+let circleXNew, circleYNew, circleWidthNew, circleHeightNew;
 
 // variables for rect
 let squareX = 175;
 let squareY = 225;
 let squareWidth = 100;
 let squareHeight = squareWidth;
-let squareNewX, squareNewY, squareNewWidth, squareNewHeight;
+let squareXNew, squareYNew, squareWidthNew, squareHeightNew;
 
 // variables for triangle
 let triangleX1 = 150;
@@ -27,7 +27,7 @@ let triangleX3 = 150;
 let triangleY3 = 175;
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-let triangleNewCentreX, triangleNewCentreY, triangleNewX1, triangleNewY1, triangleNewX2, triangleNewY2, triangleNewX3, triangleNewY3;
+let triangleCentreXNew, triangleCentreYNew, triangleX1New, triangleY1New, triangleX2New, triangleY2New, triangleX3New, triangleY3New;
 let triangleScalingFactor;
 
 // variables for colour
@@ -48,38 +48,38 @@ function draw() {
 
   // draw the circle
   fill(colours[0]);
-  circleNewX = random(circleX);
-  circleNewY = random(circleY);
-  circleNewWidth = random(circleWidth);
-  circleNewHeight = circleNewWidth;
-  ellipse(circleNewX, circleNewY, circleNewWidth, circleNewHeight);
+  circleXNew = random(circleX);
+  circleYNew = random(circleY);
+  circleWidthNew = random(circleWidth);
+  circleHeightNew = circleWidthNew;
+  ellipse(circleXNew, circleYNew, circleWidthNew, circleHeightNew);
 
   // draw the square
   fill(colours[1]);
-  squareNewX = random(squareX);
-  squareNewY = random(squareY);
-  squareNewWidth = random(squareWidth);
-  squareNewHeight = squareNewWidth;
-  rect(squareNewX, squareNewY, squareNewWidth, squareNewHeight);
+  squareXNew = random(squareX);
+  squareYNew = random(squareY);
+  squareWidthNew = random(squareWidth);
+  squareHeightNew = squareWidthNew;
+  rect(squareXNew, squareYNew, squareWidthNew, squareHeightNew);
 
   // draw the triangle
   fill(colours[2]);
   // draw the triangle
   // generate a random point to be the new centroid
-  triangleNewCentreX = random(100,300);
-  triangleNewCentreY = random(100,300);
+  triangleCentreXNew = random(100,300);
+  triangleCentreYNew = random(100,300);
   // calculate the coordinates of the new triangle
-  triangleNewX1 = triangleX1 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY1 = triangleY1 + (triangleNewCentreY - triangleCentreY);
-  triangleNewX2 = triangleX2 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY2 = triangleY2 + (triangleNewCentreY - triangleCentreY);
-  triangleNewX3 = triangleX3 + (triangleNewCentreX - triangleCentreX);
-  triangleNewY3 = triangleY3 + (triangleNewCentreY - triangleCentreY);
+  triangleX1New = triangleX1 + (triangleCentreXNew - triangleCentreX);
+  triangleY1New = triangleY1 + (triangleCentreYNew - triangleCentreY);
+  triangleX2New = triangleX2 + (triangleCentreXNew - triangleCentreX);
+  triangleY2New = triangleY2 + (triangleCentreYNew - triangleCentreY);
+  triangleX3New = triangleX3 + (triangleCentreXNew - triangleCentreX);
+  triangleY3New = triangleY3 + (triangleCentreYNew - triangleCentreY);
 
   // generate a number to scale the distance between the vertices and the new centroid
   // to be between half as large or twice as large as the original
   triangleScalingFactor = random(0.5,2);
-  triangle(triangleNewX1 * triangleScalingFactor, triangleNewY1 * triangleScalingFactor, triangleNewX2 * triangleScalingFactor, triangleNewY2 * triangleScalingFactor, triangleNewX3 * triangleScalingFactor, triangleNewY3 * triangleScalingFactor);
+  triangle(triangleX1New * triangleScalingFactor, triangleY1New * triangleScalingFactor, triangleX2New * triangleScalingFactor, triangleY2New * triangleScalingFactor, triangleX3New * triangleScalingFactor, triangleY3New * triangleScalingFactor);
 
 frameRate(1);
 }
