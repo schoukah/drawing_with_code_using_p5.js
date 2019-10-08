@@ -71,10 +71,10 @@ function draw() {
   triangleY3 = triangleY3 + (triangleCentreYNew - triangleCentreY);
   triangleCentreX = triangleCentreXNew;
   triangleCentreY = triangleCentreYNew;
-  scalingFactor = random(.25,3);
   push();
   translate(triangleCentreX,triangleCentreY);
-  triangle((triangleX1 - triangleCentreX) * scalingFactor, (triangleY1 - triangleCentreY) * scalingFactor, (triangleX2 - triangleCentreX) * scalingFactor, (triangleY2 - triangleCentreY) * scalingFactor, (triangleX3 - triangleCentreX) * scalingFactor, (triangleY3 - triangleCentreY) * scalingFactor);
+  scale(random(.25,3));
+  triangle(triangleX1 - triangleCentreX, triangleY1 - triangleCentreY, triangleX2 - triangleCentreX, triangleY2 - triangleCentreY, triangleX3 - triangleCentreX, triangleY3 - triangleCentreY);
   pop();
 }
 
