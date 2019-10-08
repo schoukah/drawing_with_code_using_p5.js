@@ -27,7 +27,6 @@ let triangleY3 = 175;
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
 let triangleCentreXNew, triangleCentreYNew;
-let triangleScalingFactor = 1;
 
 function setup() {
   createCanvas(400, 400);
@@ -61,8 +60,8 @@ function draw() {
   // draw the triangle
   fill('yellow');
   // generate random coordinates for the new centroid
-  triangleCentreXNew = int(random(width-100));
-  triangleCentreYNew = int(random(height));
+  triangleCentreXNew = random(width);
+  triangleCentreYNew = random(height);
   // calculate new x and y coordinates based on the new centroid
   triangleX1 = triangleX1 + (triangleCentreXNew - triangleCentreX);
   triangleY1 = triangleY1 + (triangleCentreYNew - triangleCentreY);
@@ -72,9 +71,11 @@ function draw() {
   triangleY3 = triangleY3 + (triangleCentreYNew - triangleCentreY);
   triangleCentreX = triangleCentreXNew;
   triangleCentreY = triangleCentreYNew;
-  console.log(triangleCentreX,triangleCentreY);
-  triangleScalingFactor = random(.5,3);
-  triangle(triangleX1 * triangleScalingFactor, triangleY1 * triangleScalingFactor, triangleX2 * triangleScalingFactor, triangleY2 * triangleScalingFactor, triangleX3 * triangleScalingFactor, triangleY3 * triangleScalingFactor);
+  scalingFactor = random(.25,3);
+  push();
+  translate(triangleCentreX,triangleCentreY);
+  triangle((triangleX1 - triangleCentreX) * scalingFactor, (triangleY1 - triangleCentreY) * scalingFactor, (triangleX2 - triangleCentreX) * scalingFactor, (triangleY2 - triangleCentreY) * scalingFactor, (triangleX3 - triangleCentreX) * scalingFactor, (triangleY3 - triangleCentreY) * scalingFactor);
+  pop();
 }
 
 function drawGraph() {
