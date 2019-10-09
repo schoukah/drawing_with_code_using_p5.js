@@ -9,14 +9,12 @@ let circleX = 75;
 let circleY = 275;
 let circleWidth = 100;
 let circleHeight = circleWidth;
-let circleXNew, circleYNew, circleWidthNew, circleHeightNew;
 
 // variables for rect
 let squareX = 175;
 let squareY = 225;
 let squareWidth = 100;
 let squareHeight = squareWidth;
-let squareXNew, squareYNew, squareWidthNew, squareHeightNew;
 
 // variables for triangle
 let triangleX1 = 150;
@@ -25,16 +23,17 @@ let triangleX2 = 290;
 let triangleY2 = 100;
 let triangleX3 = 150;
 let triangleY3 = 175;
+// calculate the centroid of the triangle
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-let triangleCentreXNew, triangleCentreYNew, triangleX1New, triangleY1New, triangleX2New, triangleY2New, triangleX3New, triangleY3New;
-let triangleScalingFactor =1;
+let triangleCentreXNew, triangleCentreYNew;
 
 // variables for colour
 let colours = ['red','yellow','blue'];
 
 function setup() {
   createCanvas(400, 400);
+  frameRate(1);
 }
 
 function draw() {
@@ -48,40 +47,39 @@ function draw() {
 
   // draw the circle
   fill(colours[0]);
-  circleXNew = random(circleX);
-  circleYNew = random(circleY);
-  circleWidthNew = random(circleWidth);
-  circleHeightNew = circleWidthNew;
-  ellipse(circleXNew, circleYNew, circleWidthNew, circleHeightNew);
+  circleX = random(width);
+  circleY = random(height);
+  circleWidth = random(width);
+  circleHeight = circleWidth;
+  ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
   fill(colours[1]);
-  squareXNew = random(squareX);
-  squareYNew = random(squareY);
-  squareWidthNew = random(squareWidth);
-  squareHeightNew = squareWidthNew;
-  rect(squareXNew, squareYNew, squareWidthNew, squareHeightNew);
+  squareX = random(width);
+  squareY = random(height);
+  squareWidth = random(width);
+  squareHeight = squareWidth;
+  rect(squareX, squareY, squareWidth, squareHeight);
 
   // draw the triangle
   fill(colours[2]);
-  // draw the triangle
-  // generate a random point to be the new centroid
-  triangleCentreXNew = random(100,300);
-  triangleCentreYNew = random(100,300);
-  // calculate the coordinates of the new triangle
-  triangleX1New = triangleX1 + (triangleCentreXNew - triangleCentreX);
-  triangleY1New = triangleY1 + (triangleCentreYNew - triangleCentreY);
-  triangleX2New = triangleX2 + (triangleCentreXNew - triangleCentreX);
-  triangleY2New = triangleY2 + (triangleCentreYNew - triangleCentreY);
-  triangleX3New = triangleX3 + (triangleCentreXNew - triangleCentreX);
-  triangleY3New = triangleY3 + (triangleCentreYNew - triangleCentreY);
-
-  // generate a number to scale the distance between the vertices and the new centroid
-  // to be between half as large or twice as large as the original
-  triangleScalingFactor = random(0.5,2);
-  triangle(triangleX1New * triangleScalingFactor, triangleY1New * triangleScalingFactor, triangleX2New * triangleScalingFactor, triangleY2New * triangleScalingFactor, triangleX3New * triangleScalingFactor, triangleY3New * triangleScalingFactor);
-
-frameRate(1);
+  // generate random coordinates for the new centroid
+  triangleCentreXNew = random(width);
+  triangleCentreYNew = random(height);
+  // calculate new x and y coordinates based on the new centroid
+  triangleX1 = triangleX1 + (triangleCentreXNew - triangleCentreX);
+  triangleY1 = triangleY1 + (triangleCentreYNew - triangleCentreY);
+  triangleX2 = triangleX2 + (triangleCentreXNew - triangleCentreX);
+  triangleY2 = triangleY2 + (triangleCentreYNew - triangleCentreY);
+  triangleX3 = triangleX3 + (triangleCentreXNew - triangleCentreX);
+  triangleY3 = triangleY3 + (triangleCentreYNew - triangleCentreY);
+  triangleCentreX = triangleCentreXNew;
+  triangleCentreY = triangleCentreYNew;
+  push();
+  translate(triangleCentreX,triangleCentreY);
+  scale(random(.25,3));
+  triangle(triangleX1 - triangleCentreX, triangleY1 - triangleCentreY, triangleX2 - triangleCentreX, triangleY2 - triangleCentreY, triangleX3 - triangleCentreX, triangleY3 - triangleCentreY);
+  pop();
 }
 
 function drawGraph() {
