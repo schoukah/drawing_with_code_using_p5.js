@@ -18,14 +18,6 @@ let squareWidth = 100;
 let squareHeight = squareWidth;
 let squareXNew, squareYNew, squareWidthNew, squareHeightNew;
 
-// variables for colour
-let colours = ['red','yellow','blue'];
-
-// variables for animation flags
-let circleIsDone = false;
-let squareIsDone = false;
-let triangleIsDone = false;
-
 // variables for triangle
 let triangleX1 = 150;
 let triangleY1 = 25;
@@ -44,6 +36,14 @@ triangleX2 = triangleX2 - triangleCentreX;
 triangleY2 = triangleY2 - triangleCentreY;
 triangleX3 = triangleX3 - triangleCentreX;
 triangleY3 = triangleY3 - triangleCentreY;
+
+// variables for colour
+let colours = ['red','yellow','blue'];
+
+// variables for animation flags
+let circleIsDone = false;
+let squareIsDone = false;
+let triangleIsDone = false;
 
 function setup() {
   createCanvas(400, 400);
