@@ -41,6 +41,7 @@ triangleY3 = triangleY3 - triangleCentreY;
 
 // variables for colour
 let colours = ['red','yellow', 'blue'];
+let alpha;
 let coloursNew;
 
 // variables for animation flags
@@ -69,9 +70,9 @@ function setup() {
   triangleScaleNew = random(.5,3);
 
   // initialize the array with new colour format
-  colours = [color('red'), color('yellow'), color('blue')];
+  alpha = random(128,255);
+  colours = [ [255,0,0,alpha], [255,255,0,alpha], [0,0,255,alpha] ];
   coloursNew = shuffle(colours);
-  console.log(colours, coloursNew);
 }
 
 function draw() {
@@ -85,30 +86,30 @@ function draw() {
   // draw the circle
   fill(colours[0]);
   ellipse(circleX, circleY, circleWidth, circleHeight);
-  circleX += (circleXNew-circleX)/10;
-  circleY += (circleYNew-circleY)/10;
-  circleWidth += (circleWidthNew - circleWidth)/10;
+  circleX += (circleXNew-circleX)/100;
+  circleY += (circleYNew-circleY)/100;
+  circleWidth += (circleWidthNew - circleWidth)/100;
   circleHeight = circleWidth;
-  colours[0].levels[0] += (coloursNew[0].levels[0] - colours[0].levels[0])/10;
-  colours[0].levels[1] += (coloursNew[0].levels[1] - colours[0].levels[1])/10;
-  colours[0].levels[2] += (coloursNew[0].levels[2] - colours[0].levels[2])/10;
+  colours[0][0] += (coloursNew[0][0] - colours[0][0])/100;
+  colours[0][1] += (coloursNew[0][1] - colours[0][1])/100;
+  colours[0][2] += (coloursNew[0][2] - colours[0][2])/100;
   if (circleXNew - circleX < 1 && circleYNew - circleY < 1 && circleWidthNew - circleWidth < 1 &&
-    coloursNew[0].levels[0] - colours[0].levels[0] < 1 && coloursNew[0].levels[1] - colours[0].levels[1] < 1 && coloursNew[0].levels[2] - colours[0].levels[2] < 1 ) {
+    abs(coloursNew[0][0] - colours[0][0]) < 1 && abs(coloursNew[0][1] - colours[0][1]) < 1 && abs(coloursNew[0][2] - colours[0][2]) < 1 ) {
     circleIsDone = true;
   }
 
   // draw the square
   fill(colours[1]);
   rect(squareX, squareY, squareWidth, squareHeight);
-  squareX += (squareXNew-squareX)/10;
-  squareY += (squareYNew-squareY)/10;
-  squareWidth += (squareWidthNew - squareWidth)/10;
+  squareX += (squareXNew-squareX)/100;
+  squareY += (squareYNew-squareY)/100;
+  squareWidth += (squareWidthNew - squareWidth)/100;
   squareHeight = squareWidth;
-  colours[1].levels[0] += (coloursNew[1].levels[0] - colours[1].levels[0])/10;
-  colours[1].levels[1] += (coloursNew[1].levels[1] - colours[1].levels[1])/10;
-  colours[1].levels[2] += (coloursNew[1].levels[2] - colours[1].levels[2])/10;
+  colours[1][0] += (coloursNew[1][0] - colours[1][0])/100;
+  colours[1][1] += (coloursNew[1][1] - colours[1][1])/100;
+  colours[1][2] += (coloursNew[1][2] - colours[1][2])/100;
   if (squareXNew - squareX < 1 && squareYNew - squareY < 11 && squareWidthNew - squareWidth < 1 &&
-    coloursNew[1].levels[0] - colours[1].levels[0] < 1 && coloursNew[1].levels[1] - colours[1].levels[1] < 1 && coloursNew[1].levels[2] - colours[1].levels[2] < 1 ) {
+    abs(coloursNew[1][0] - colours[1][0]) < 1 && abs(coloursNew[1][1] - colours[1][1]) < 1 && abs(coloursNew[1][2] - colours[1][2]) < 1 ) {
     squareIsDone = true;
   }
 
@@ -119,14 +120,14 @@ function draw() {
   scale(triangleScale);
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
   pop();
-  triangleCentreX += (triangleCentreXNew - triangleCentreX)/10;
-  triangleCentreY += (triangleCentreYNew - triangleCentreY)/10;
-  triangleScale += (triangleScaleNew - triangleScale)/10;
-  colours[2].levels[0] += (coloursNew[2].levels[0] - colours[2].levels[0])/10;
-  colours[2].levels[1] += (coloursNew[2].levels[1] - colours[2].levels[1])/10;
-  colours[2].levels[2] += (coloursNew[2].levels[2] - colours[2].levels[2])/10;
+  triangleCentreX += (triangleCentreXNew - triangleCentreX)/100;
+  triangleCentreY += (triangleCentreYNew - triangleCentreY)/100;
+  triangleScale += (triangleScaleNew - triangleScale)/100;
+  colours[2][0] += (coloursNew[2][0] - colours[2][0])/100;
+  colours[2][1] += (coloursNew[2][1] - colours[2][1])/100;
+  colours[2][2] += (coloursNew[2][2] - colours[2][2])/100;
   if (triangleCentreXNew - triangleCentreX < 1 && triangleCentreYNew - triangleCentreY && triangleScale - triangleScaleNew < .1 &&
-    coloursNew[2].levels[0] - colours[2].levels[0] < 1 && coloursNew[2].levels[1] - colours[2].levels[1] < 1 && coloursNew[2].levels[2] - colours[2].levels[2] < 1 ) {
+    abs(coloursNew[2][0] - colours[2][0]) < 1 && abs(coloursNew[2][1] - colours[2][1]) < 1 && abs(coloursNew[2][2] - colours[2][2]) < 1 ) {
     triangleIsDone = true;
   }
   // if the shapes are in their new positions
@@ -143,8 +144,9 @@ function draw() {
     triangleCentreXNew = random(width);
     triangleCentreYNew = random(height);
     triangleScaleNew = random(.25,3);
-    colours = [color('red'), color('yellow'), color('blue')];
-    coloursNew = shuffle(colours);
+    colours = coloursNew;
+    alpha = random(128,255);
+    coloursNew = shuffle([ [255,0,0,alpha], [255,255,0,alpha], [0,0,255,alpha] ]);
     circleIsDone = false;
     squareIsDone = false;
     triangleIsDone = false;
