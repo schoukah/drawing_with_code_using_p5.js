@@ -41,7 +41,7 @@ triangleY3 = triangleY3 - triangleCentreY;
 
 // variables for colour
 let colours = ['red','yellow', 'blue'];
-let alpha;
+let coloursAlpha;
 let coloursNew;
 
 // variables for animation flags
@@ -70,9 +70,10 @@ function setup() {
   triangleScaleNew = random(.5,3);
 
   // initialize the array with new colour format
-  alpha = random(128,255);
-  colours = [ [255,0,0,alpha], [255,255,0,alpha], [0,0,255,alpha] ];
+  coloursAlpha = random(128,255);
+  colours = [ [255,0,0,coloursAlpha], [255,255,0,coloursAlpha], [0,0,255,coloursAlpha] ];
   coloursNew = shuffle(colours);
+  console.log(colours,coloursNew)
 }
 
 function draw() {
@@ -145,8 +146,8 @@ function draw() {
     triangleCentreYNew = random(height);
     triangleScaleNew = random(.25,3);
     colours = coloursNew;
-    alpha = random(128,255);
-    coloursNew = shuffle([ [255,0,0,alpha], [255,255,0,alpha], [0,0,255,alpha] ]);
+    coloursAlpha = random(128,255);
+    coloursNew = shuffle([ [255,0,0,coloursAlpha], [255,255,0,coloursAlpha], [0,0,255,coloursAlpha] ]);
     circleIsDone = false;
     squareIsDone = false;
     triangleIsDone = false;
