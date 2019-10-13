@@ -52,9 +52,9 @@ function draw() {
   // draw the circle
   fill(colours[0]);
   ellipse(circleX, circleY, circleWidth, circleHeight);
-  circleX += (circleXNew-circleX)/10;
-  circleY += (circleYNew-circleY)/10;
-  circleWidth += (circleWidthNew - circleWidth)/10;
+  circleX += (circleXNew-circleX)/100;
+  circleY += (circleYNew-circleY)/100;
+  circleWidth += (circleWidthNew - circleWidth)/100;
   circleHeight = circleWidth;
   if (circleXNew - circleX < 1 && circleYNew - circleY < 1 && circleWidthNew - circleWidth < 1) {
     circleIsDone = true;
@@ -63,9 +63,9 @@ function draw() {
   // draw the square
   fill(colours[1]);
   rect(squareX, squareY, squareWidth, squareHeight);
-  squareX += (squareXNew-squareX)/10;
-  squareY += (squareYNew-squareY)/10;
-  squareWidth += (squareWidthNew - squareWidth)/10;
+  squareX += (squareXNew-squareX)/100;
+  squareY += (squareYNew-squareY)/100;
+  squareWidth += (squareWidthNew - squareWidth)/100;
   squareHeight = squareWidth;
   if (squareXNew - squareX < 1 && squareYNew - squareY < 11 && circleWidthNew - circleWidth < 1) {
     squareIsDone = true;
@@ -88,7 +88,7 @@ function draw() {
     squareHeightNew = squareWidthNew;
     circleIsDone = false;
     squareIsDone = false;
-    shuffleArray(colours);
+    colours = shuffle(colours);
   }
 }
 
@@ -102,12 +102,4 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
-}
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
 }

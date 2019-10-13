@@ -73,11 +73,15 @@ function draw() {
   if (circleIsDone === true && squareIsDone === true) {
     circleXNew = random(width);
     circleYNew = random(height);
+    circleWidth = random(width);
+    circleHeight = circleWidth;
     squareXNew = random(width);
     squareYNew = random(height);
+    squareWidth = random(width);
+    squareHeight = squareWidth;
     circleIsDone = false;
     squareIsDone = false;
-    shuffleArray(colours);
+    colours = shuffle(colours);
   }
 }
 
@@ -91,12 +95,4 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
-}
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
 }

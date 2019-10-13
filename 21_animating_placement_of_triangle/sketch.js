@@ -1,6 +1,6 @@
 /*
 
-Varying the placment of the triangle
+Animating the placment of the triangle
 
 */
 
@@ -25,6 +25,7 @@ let triangleX2 = 290;
 let triangleY2 = 100;
 let triangleX3 = 150;
 let triangleY3 = 175;
+let triangleScale = 1;
 // calculate the centroid of the triangle
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
@@ -35,6 +36,7 @@ triangleX2 = triangleX2 - triangleCentreX;
 triangleY2 = triangleY2 - triangleCentreY;
 triangleX3 = triangleX3 - triangleCentreX;
 triangleY3 = triangleY3 - triangleCentreY;
+let triangleCentreXNew, triangleCentreYNew;
 
 // variables for colour
 let colours = ['red','yellow','blue'];
@@ -42,6 +44,7 @@ let colours = ['red','yellow','blue'];
 // variables for animation flags
 let circleIsDone = false;
 let squareIsDone = false;
+let triangleIsDone = false;
 
 function setup() {
   createCanvas(400, 400);
@@ -57,6 +60,10 @@ function setup() {
   squareYNew = random(height);
   squareWidthNew = random(width);
   squareHeightNew = squareWidthNew;
+
+  // set the initial centroid for the new triangle
+  triangleCentreXNew = random(width);
+  triangleCentreYNew = random(height);
 }
 
 function draw() {
@@ -70,9 +77,9 @@ function draw() {
   // draw the circle
   fill(colours[0]);
   ellipse(circleX, circleY, circleWidth, circleHeight);
-  circleX += (circleXNew-circleX)/10;
-  circleY += (circleYNew-circleY)/10;
-  circleWidth += (circleWidthNew - circleWidth)/10;
+  circleX += (circleXNew-circleX)/100;
+  circleY += (circleYNew-circleY)/100;
+  circleWidth += (circleWidthNew - circleWidth)/100;
   circleHeight = circleWidth;
   if (circleXNew - circleX < 1 && circleYNew - circleY < 1 && circleWidthNew - circleWidth < 1) {
     circleIsDone = true;
@@ -81,9 +88,9 @@ function draw() {
   // draw the square
   fill(colours[1]);
   rect(squareX, squareY, squareWidth, squareHeight);
-  squareX += (squareXNew-squareX)/10;
-  squareY += (squareYNew-squareY)/10;
-  squareWidth += (squareWidthNew - squareWidth)/10;
+  squareX += (squareXNew-squareX)/100;
+  squareY += (squareYNew-squareY)/100;
+  squareWidth += (squareWidthNew - squareWidth)/100;
   squareHeight = squareWidth;
   if (squareXNew - squareX < 1 && squareYNew - squareY < 11 && squareWidthNew - squareWidth < 1) {
     squareIsDone = true;
@@ -93,13 +100,19 @@ function draw() {
   fill(colours[2]);
   push();
   translate(triangleCentreX,triangleCentreY);
+  ellipse(0,0,10,10);
+  scale(triangleScale);
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
   pop();
+  triangleCentreX += (triangleCentreXNew - triangleCentreX)/100;
+  triangleCentreY += (triangleCentreYNew - triangleCentreY)/100;
+  if (triangleCentreXNew - triangleCentreX < 1 && triangleCentreYNew - triangleCentreY) {
+    triangleIsDone = true;
+  }
 
   // if the shapes are in their new positions
-  // generate coordinates for their new positions and
-  // set the animation flags to start the process again
-  if (circleIsDone === true && squareIsDone === true) {
+  // generate new stop coordinates and start again
+  if (circleIsDone === true && squareIsDone === true && triangleIsDone === true) {
     circleXNew = random(width);
     circleYNew = random(height);
     circleWidthNew = random(width);
@@ -108,10 +121,12 @@ function draw() {
     squareYNew = random(height);
     squareWidthNew = random(width);
     squareHeightNew = squareWidthNew;
-    triangleCentreX = random(width);
-    triangleCentreY = random(height);
+    triangleCentreXNew = random(width);
+    triangleCentreYNew = random(height);
+    triangleScale = random(.1,3);
     circleIsDone = false;
     squareIsDone = false;
+    triangleIsDone = false;
     colours = shuffle(colours);
   }
 }

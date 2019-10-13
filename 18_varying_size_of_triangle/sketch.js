@@ -29,7 +29,6 @@ let triangleScale = 1;
 // calculate the centroid of the triangle
 let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
 let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-let triangleCentreXNew, triangleCentreYNew, triangleScaleNew;
 // express the coordinates for the triangle in relationship to the centroid
 triangleX1 = triangleX1 - triangleCentreX;
 triangleY1 = triangleY1 - triangleCentreY;
@@ -44,7 +43,6 @@ let colours = ['red','yellow','blue'];
 // variables for animation flags
 let circleIsDone = false;
 let squareIsDone = false;
-let triangleIsDone = false;
 
 function setup() {
   createCanvas(400, 400);
@@ -60,11 +58,6 @@ function setup() {
   squareYNew = random(height);
   squareWidthNew = random(width);
   squareHeightNew = squareWidthNew;
-
-  // set the initial centroid for the new triangle
-  triangleCentreXNew = random(width);
-  triangleCentreYNew = random(height);
-  triangleScaleNew = random(.5,3);
 }
 
 function draw() {
@@ -104,15 +97,11 @@ function draw() {
   scale(triangleScale);
   triangle(triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3);
   pop();
-  triangleCentreX += (triangleCentreXNew - triangleCentreX)/10;
-  triangleCentreY += (triangleCentreYNew - triangleCentreY)/10;
-  triangleScale += (triangleScaleNew - triangleScale)/10;
-  if (triangleCentreXNew - triangleCentreX < 1 && triangleCentreYNew - triangleCentreY && triangleScale - triangleScaleNew < .1) {
-    triangleIsDone = true;
-  }
+
   // if the shapes are in their new positions
-  // generate new stop coordinates and start again
-  if (circleIsDone === true && squareIsDone === true && triangleIsDone === true) {
+  // generate coordinates for their new positions and
+  // set the animation flags to start the process again
+  if (circleIsDone === true && squareIsDone === true) {
     circleXNew = random(width);
     circleYNew = random(height);
     circleWidthNew = random(width);
@@ -121,13 +110,12 @@ function draw() {
     squareYNew = random(height);
     squareWidthNew = random(width);
     squareHeightNew = squareWidthNew;
-    triangleCentreXNew = random(width);
-    triangleCentreYNew = random(height);
-    triangleScaleNew = random(.25,3);
+    triangleCentreX = random(width);
+    triangleCentreY = random(height);
+    triangleScale = random(.1,3);
     circleIsDone = false;
     squareIsDone = false;
-    triangleIsDone = false;
-    shuffleArray(colours);
+    colours = shuffle(colours);
   }
 }
 
@@ -141,12 +129,4 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
-}
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
 }

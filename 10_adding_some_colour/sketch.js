@@ -19,7 +19,6 @@ function setup() {
   line(0,100,400,100);
   line(0,200,400,200);
   line(0,300,400,300);
-
 }
 
 function draw() {

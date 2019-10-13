@@ -40,7 +40,6 @@ function draw() {
   // draw the triangle
   fill('yellow');
   triangle(150,25,290,100,150,175);
-
 }
 
 function drawGraph() {
