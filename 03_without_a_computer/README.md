@@ -1,6 +1,10 @@
 # Drawing with Code without a Computer
 
-Take chances, make mistakes, get messy!
+> Take chances, make mistakes, get messy!
+
+![] ( Ms-Frizzle.jpg )
+
+<div style='text-align: right'>https://youtu.be/p8jw_-Vh9Z0</div>
 
 Using a pencil or pen on a blank piece of paper:
 
@@ -11,12 +15,7 @@ Using a pencil or pen on a blank piece of paper:
     5. Colour in a different shape using a different crayon
     6. Colour in the last shape using the last crayon
 
-- Let's pin up our drawings.
-
-- Let's reflect on the characteristics that are different in each drawing
-  - placement
-  - size
-  - colour
+What are the choices we had to make while we were composing our sketches?
 
 ## Triangle, Square, Circle: A Psychological Test
 
