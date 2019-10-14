@@ -4,7 +4,7 @@ Artists have been drawing with code both with and without computers.
 
 ## Sol LeWitt
 
-> One of the most influential and interesting artists of the 20th century, and one who has particular relevance to those interested in Generative Design is Sol Lewitt. At his core he was a minimalist, so much so that most of his famous pieces were not even executed by him in person. He did not sell paintings on canvases, instead he sold “codes” or procedures with specific instructions that would then be implemented by a draftsman, who was required to faithfully execute the instructions, but whose own hand and judgement led to the final formal outcome of the work.
+> At his core he was a minimalist, so much so that most of his famous pieces were not even executed by him in person. He did not sell paintings on canvases, instead he sold “codes” or procedures with specific instructions that would then be implemented by a draftsman, who was required to faithfully execute the instructions, but whose own hand and judgement led to the final formal outcome of the work.
 
 <div style='text-align: right'><p>https://generativelandscapes.wordpress.com/2014/08/14/procedural-art-sol-lewitt-example-3-1/</p></div>
 
@@ -24,7 +24,7 @@ by straight lines. “
 
 Here is an interpretation of his instructions that I coded using p5.js:
 
-![] ( https://adamherst.art/wall_drawing_boston_museum_after_sol_lewitt/ )
+https://adamherst.art/wall_drawing_boston_museum_after_sol_lewitt/
 
 ## Vera Molnar
 
@@ -37,3 +37,9 @@ https://miro.medium.com/max/1024/0*c0mElQWLFU27xwKZ.jpg
 https://miro.medium.com/max/988/0*eH9FCa1zyRlPqxo5.png
 
 ## Harold Cohen
+
+> Harold Cohen, artist and pioneer in the field of computer-generated art, died on April 27, 2016 at the age of 87. Cohen is the author of AARON, perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use. Cohen viewed AARON as his collaborator. At times during their decades-long relationship AARON was quite autonomous, responsible for the composition, coloring and other aspects of a work; more recently, AARON served Cohen by making drawings that Cohen would develop into paintings. Cohen's death is the end of a lengthy partnership between an artist and an artificial intelligence.
+
+<div style='text-align: right'><p>https://elcamencinitas.tributes.com/dignitymemorial/obituary/Harold-Cohen-103521554</p></div>
+
+https://www.youtube.com/watch?v=ojISZrIKRc8
