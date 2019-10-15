@@ -5,16 +5,24 @@ Varying the placement of the circle and the square
 */
 
 // variables for ellipse
-let circleX = 75;
-let circleY = 275;
+let circleX;
+let circleY;
 
 // variables for rect
-let squareX = 175;
-let squareY = 225;
+let squareX, squareY;
 
 function setup() {
   createCanvas(400, 400);
-  frameRate(1);
+
+  // variables for ellipse
+  circleX = 75;
+  circleY = 275;
+
+  // variables for rect
+  squareX = 175;
+  squareY = 225;
+
+  noLoop();
 }
 
 function draw() {
@@ -22,24 +30,26 @@ function draw() {
 
   drawGraph();
 
-  stroke('black');
   strokeWeight(0);
 
   // draw the circle
   fill('red');
+  ellipse(circleX, circleY,125-25,325-225);
   circleX = random(width);
   circleY = random(height);
-  ellipse(circleX, circleY, 100, 100);
 
   // draw the square
   fill('blue');
+  rect(squareX, squareY, 290-175,350-225);
   squareX = random(width);
   squareY = random(height);
-  rect(squareX, squareY, 115, 125);
 
   // draw the triangle
   fill('yellow');
   triangle(150,25,290,100,150,175);
+  
+  // set the strokeWeight back to the default
+  strokeWeight(1);
 }
 
 function drawGraph() {
@@ -52,4 +62,8 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
+}
+
+function mouseClicked() {
+  redraw();
 }

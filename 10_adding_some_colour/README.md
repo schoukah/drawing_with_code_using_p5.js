@@ -1,6 +1,12 @@
-# Adding some colour
+# Adding colour to the shapes
 
-p5.js has built-in functions to set the colour of the background, lines, and shapes.
+p5.js has built-in functions to set different colours:
+
+- background()
+- stroke()
+- fill()
+
+# CSS colour strings
 
 The easiest way to specify the colour you want is to use a CSS colour string, such as:
 
@@ -12,22 +18,31 @@ The easiest way to specify the colour you want is to use a CSS colour string, su
 
 ## Setting the background colour
 
-    background(colour_string)
+The background() function sets the color used for the background of the p5.js canvas:
 
-The background() function sets the color used for the background of the p5.js canvas.
+    background(colour_string)
 
 ## Setting the colour of lines
 
+Sets the color used to draw lines and borders around shapes:
+
     stroke(colour_string)
 
-Sets the color used to draw lines and borders around shapes. All shapes drawn after the fill command will be filled with the specified colour.
+- all shapes drawn after the stroke command will be drawn with the specified colour.
 
 ## Setting the colour of shapes
 
+Sets the colour used to fill shapes:
+
     fill(colour_string)
 
-Sets the colour used to fill shapes. All shapes drawn after the fill command will be filled with the specified colour.
+- all shapes drawn after the fill command will be filled with the specified colour.
 
 ## Add the colours from your drawing to your sketch
 
-In addition to colouring the shapes, make the background lightgrey and the lines grey.
+Add code to your sketch to:
+
+- make the background lightgrey
+- make the grid lines grey
+- colour the shapes in the colours from your drawing
+- turn off the outlines of the shapes
