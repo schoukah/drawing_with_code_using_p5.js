@@ -11,7 +11,7 @@ let circleX, circleY, circleWidth, circleHeight;
 let squareX, squareY, squareWidth, squareHeight;
 
 // declare the variables for colour
-let colours = [];
+let colours;
 
 function setup() {
   createCanvas(400, 400);
@@ -63,7 +63,7 @@ function draw() {
   // draw the triangle
   fill(colours[2]);
   triangle(150,25,290,100,150,175);
-  
+
   // randomize the array of colours
   colours = shuffle(colours);
 
