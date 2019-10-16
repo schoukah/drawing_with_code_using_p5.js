@@ -6,4 +6,4 @@ p5.js is a JavaScript library that starts with the original goal of Processing t
 
 In this workshop, participants will be introduced to generative art and the fundamentals of p5.js, a programming language developed for artists to simplify drawing with code. Participants will learn how to use the p5.js web editor to create sketches using built-in and user-defined shapes, animate the shapes to create dynamic sketches, introduce randomness to create sketches that are different each time they are run, and share the sketches over the web.
 
-View a live demo <a href="https://adamherst.art/wall_drawing_boston_museum_after_sol_lewitt/">here</a>.
+View a live demo <a href="https://adamherst.art/wall_drawing_boston_museum_after_sol_lewitt/" target='_blank'>here</a>.
