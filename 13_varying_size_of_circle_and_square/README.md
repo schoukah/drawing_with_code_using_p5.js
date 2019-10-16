@@ -1,28 +1,28 @@
-# Varying the size of the circle and the square
+# Varying size
 
-We were able to vary the placement of the circle and square by generating random numbers to use as the parameters
-for the X and Y coordinates.
+We were able to vary the placement of the circle and square by generating random numbers to use as the parameters for the X and Y coordinates. We can vary the size of the circle and square by generating random numbers to use as the parameters for their width and height.
 
-We can vary the size of the circle and square by generating random numbers to use as the parameters for width and height.
+In the area above setup(), declare the variables:
 
-## Using variables to represent width and height
+    let circleWidth, circleHeight;
 
-We need to add some new variables at the top of our program:
+In setup(), assign values to the variables:
 
-    let circleX = 75;
-    let circleY = 275;
-    let circleWidth = 100;
-    let circleHeight = circleWidth;
-    let circleNewX, circleNewY, circleNewWidth, circleNewHeight;
+    circleWidth = 100;
+    circleHeight = circleWidth;
 
-And substitute them for the numbers used as parameters in the ellipse statement:
+## Changing the way we draw our squares
 
-    circleNewX = random(circleX);
-    circleNewY = random(circleY);
-    circleNewWidth = random(circleWidth);
-    circleNewHeight = circleNewWidth;
-    ellipse(circleNewX, circleNewY, circleNewWidth, circleNewHeight);
+By default, p5.js interprets the x and y parameters passed to rect() as the coordinates of the top left corner. We can change this behaviour using:
 
-## Activity
+    rectMode(CENTER);
 
-Vary the size of the square following the same procedure.
+- rectMode(CENTER) interprets the first two parameters of rect() as the shape's center point
+
+## Vary the size of your circle and square
+
+Using a similar procedure as in the last exercise:
+
+- save the original values for the width and height of the circle and square in variables called circleWidth, circleHeight, squareWidth, and squareHeight
+- draw the circle and square using the variables instead of numbers as the parameters
+- assign random values based on the width and height of the canvas to the variables used as the parameters so that they will have a different size on the next call to draw()

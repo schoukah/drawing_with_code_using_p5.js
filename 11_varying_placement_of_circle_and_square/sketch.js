@@ -4,32 +4,33 @@ Varying the placement of the circle and the square
 
 */
 
-// variables for ellipse
+// declare the variables for ellipse
 let circleX;
 let circleY;
 
-// variables for rect
+// declare the variables for rect
 let squareX, squareY;
 
 function setup() {
   createCanvas(400, 400);
 
-  // variables for ellipse
+  // assign values to the variables for ellipse
   circleX = 75;
   circleY = 275;
 
-  // variables for rect
+  // assign values to the variables for rect
   squareX = 175;
   squareY = 225;
 
-  noLoop();
+//  noLoop();
 }
 
 function draw() {
   background('lightgrey');
 
-  drawGraph();
+  drawGrid();
 
+  // don't draw a line around the shapes
   strokeWeight(0);
 
   // draw the circle
@@ -47,12 +48,16 @@ function draw() {
   // draw the triangle
   fill('yellow');
   triangle(150,25,290,100,150,175);
-  
+
   // set the strokeWeight back to the default
   strokeWeight(1);
 }
 
-function drawGraph() {
+function mouseClicked() {
+  redraw();
+}
+
+function drawGrid() {
   stroke('grey');
   strokeWeight(1);
   // draw a grid
@@ -62,8 +67,4 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
-}
-
-function mouseClicked() {
-  redraw();
 }

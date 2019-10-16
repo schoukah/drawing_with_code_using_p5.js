@@ -4,53 +4,68 @@ Varying the size of the circle and square
 
 */
 
-// variables for ellipse
-let circleX = 75;
-let circleY = 275;
-let circleWidth = 100;
-let circleHeight = circleWidth;
+// declare the variables for ellipse
+let circleX, circleY;
+let circleWidth, circleHeight;
 
-// variables for rect
-let squareX = 175;
-let squareY = 225;
-let squareWidth = 100;
-let squareHeight = squareWidth;
+// declare the variables for rect
+let squareX, squareY;
+let squareWidth, squareHeight;
 
 function setup() {
   createCanvas(400, 400);
-  frameRate(1);
+
+  // assign values to the variables for ellipse
+  circleX = 75;
+  circleY = 275;
+  circleWidth = 100;
+  circleHeight = circleWidth;
+
+  // assign values to the variables for rect
+  // adjust squareX and squareY to be the coordinates of the centre
+  squareX = 175 + 100/2;
+  squareY = 225 + 100/2;
+  squareWidth = 100;
+  squareHeight = squareWidth;
+
+  rectMode(CENTER);
+  noLoop();
 }
 
 function draw() {
   background('lightgrey');
 
-  drawGraph();
+  drawGrid();
 
-  stroke('black');
+  // don't draw a line around the shapes
   strokeWeight(0);
 
   // draw the circle
   fill('red');
+  ellipse(circleX, circleY, circleWidth, circleHeight);
   circleX = random(width);
   circleY = random(height);
   circleWidth = random(width);
   circleHeight = circleWidth;
-  ellipse(circleX, circleY, circleWidth, circleHeight);
 
   // draw the square
   fill('blue');
+  rect(squareX, squareY, squareWidth, squareHeight);
   squareX = random(width);
   squareY = random(height);
   squareWidth = random(width);
   squareHeight = squareWidth;
-  rect(squareX, squareY, squareWidth, squareHeight);
 
   // draw the triangle
   fill('yellow');
   triangle(150,25,290,100,150,175);
 }
 
-function drawGraph() {
+function mouseClicked() {
+  redraw();
+}
+
+function drawGrid() {
   stroke('grey');
   strokeWeight(1);
   // draw a grid
