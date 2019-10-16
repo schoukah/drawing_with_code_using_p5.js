@@ -4,49 +4,55 @@ Animating the size of the circle and square
 
 */
 
-// variables for ellipse
-let circleX = 75;
-let circleY = 275;
-let circleWidth = 100;
-let circleHeight = circleWidth;
-let circleXNew, circleYNew, circleWidthNew, circleHeightNew;
+// declare the variables for ellipse
+let circleX, circleY, circleWidth, circleHeight;
+let circleXNew, circleYNew, circleWidthNew, circleHeightNew, circleIsDone;
 
-// variables for rect
-let squareX = 175;
-let squareY = 225;
-let squareWidth = 100;
-let squareHeight = squareWidth;
-let squareXNew, squareYNew, squareWidthNew, squareHeightNew;
+// declare the variables for rect
+let squareX, squareY, squareWidth, squareHeight;
+let squareXNew, squareYNew, squareWidthNew, squareHeightNew, squareIsDone;
 
-// variables for colour
+// declare the variables for colour
 let colours = ['red','yellow','blue'];
-
-// variables for animation flags
-let circleIsDone = false;
-let squareIsDone = false;
 
 function setup() {
   createCanvas(400, 400);
 
-  // initialize the parameters for the new circle
+  // assign initial values to the variables for ellipse
+  circleX = 75;
+  circleY = 275;
+  circleWidth = 100;
+  circleHeight = circleWidth;
   circleXNew = random(width);
   circleYNew = random(height);
   circleWidthNew = random(width);
   circleHeightNew = circleWidthNew;
+  circleIsDone = false;
 
-  // set the initial parameters for the new square
+  // assign initial values to the variables for rect
+  // adjust squareX and squareY to be the coordinates of the centre
+  squareX = 175 + 100/2;
+  squareY = 225 + 100/2;
+  squareWidth = 100;
+  squareHeight = squareWidth;
   squareXNew = random(width);
   squareYNew = random(height);
   squareWidthNew = random(width);
   squareHeightNew = squareWidthNew;
+  squareIsDone = false;
+
+  // assign values to the variables for colour
+  colours = ['red','yellow','blue'];
+
+  rectMode(CENTER);
 }
 
 function draw() {
   background('lightgrey');
 
-  drawGraph();
+  drawGrid();
 
-  stroke('black');
+  // don't draw a line around the shapes
   strokeWeight(0);
 
   // draw the circle
@@ -56,7 +62,7 @@ function draw() {
   circleY += (circleYNew-circleY)/100;
   circleWidth += (circleWidthNew - circleWidth)/100;
   circleHeight = circleWidth;
-  if (circleXNew - circleX < 1 && circleYNew - circleY < 1 && circleWidthNew - circleWidth < 1) {
+  if (abs(circleXNew - circleX) < 1 && abs(circleYNew - circleY) < 1 && abs(circleWidthNew - circleWidth < 1)) {
     circleIsDone = true;
   }
 
@@ -67,7 +73,7 @@ function draw() {
   squareY += (squareYNew-squareY)/100;
   squareWidth += (squareWidthNew - squareWidth)/100;
   squareHeight = squareWidth;
-  if (squareXNew - squareX < 1 && squareYNew - squareY < 11 && circleWidthNew - circleWidth < 1) {
+  if (abs(squareXNew - squareX) < 1 && abs(squareYNew - squareY < 1) && abs(circleWidthNew - circleWidth < 1)) {
     squareIsDone = true;
   }
 
@@ -86,13 +92,14 @@ function draw() {
     squareYNew = random(height);
     squareWidthNew = random(width);
     squareHeightNew = squareWidthNew;
+    colours = shuffle(colours);
+    // reset the flags so the shapes will move to the new positions
     circleIsDone = false;
     squareIsDone = false;
-    colours = shuffle(colours);
   }
 }
 
-function drawGraph() {
+function drawGrid() {
   stroke('grey');
   strokeWeight(1);
   // draw a grid

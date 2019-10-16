@@ -18,7 +18,7 @@ let colours;
 function setup() {
   createCanvas(400, 400);
 
-  // assign values to the variables for ellipse
+  // assign initial values to the variables for ellipse
   circleX = 75;
   circleY = 275;
   circleWidth = 100;
@@ -27,7 +27,7 @@ function setup() {
   circleYNew = random(height);
   circleIsDone = false;
 
-  // assign values to the variables for rect
+  // assign initial values to the variables for rect
   // adjust squareX and squareY to be the coordinates of the centre
   squareX = 175 + 100/2;
   squareY = 225 + 100/2;
@@ -41,7 +41,7 @@ function setup() {
   colours = ['red','yellow','blue'];
 
   rectMode(CENTER);
-//  noLoop();
+  noLoop();
 }
 
 function draw() {
