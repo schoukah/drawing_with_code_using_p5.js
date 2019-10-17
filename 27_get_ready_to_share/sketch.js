@@ -71,7 +71,7 @@ function setup() {
   // set the centroid and scale for the new triangle
   triangleCentreXNew = random(width);
   triangleCentreYNew = random(height);
-  triangleScaleNew = random(.1,3);
+  triangleScaleNew = random(.1,4*width/(dist(triangleCentreX,triangleCentreY,triangleX1,triangleY1)));
   triangleIsDone = false;
 
   // assign values to the variables for colour
@@ -153,7 +153,7 @@ function draw() {
     squareHeightNew = squareWidthNew;
     triangleCentreXNew = random(width);
     triangleCentreYNew = random(height);
-    triangleScaleNew = random(.25,3);
+    triangleScaleNew = random(.1,4*width/(dist(triangleCentreX,triangleCentreY,triangleX1,triangleY1)));
     coloursNew = shuffle([ [255,0,0,196], [255,255,0,196], [0,0,255,196] ]);
     // reset the flags so the shapes will move to the new positions
     circleIsDone = false;
