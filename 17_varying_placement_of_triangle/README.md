@@ -58,4 +58,4 @@ Using the same pattern we used to vary the placement of the circle and square:
 - above setup(), declare the variables for the triangle: triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3, triangleCentreX, triangleCentreY
 - in setup(), assign the initial values to the variables for the corners, use them to calculate the coordinates for the centroid, and then use the centroids to calculate and assign values for the corners in relationship to the coordinates for the centroid
 - in draw(), save the environment with push(), translate the origin to the centroid, draw the triangle, and restore the environment with pop()
-- generate new random values for the coordinates to be used on the next iteration of the drawing
+- in the appropriate location in draw(), generate new random values for the coordinates to be used on the next iteration of the drawing
