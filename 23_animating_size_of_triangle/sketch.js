@@ -124,7 +124,6 @@ function draw() {
   }
 
   // if the shapes are in their new positions
-  // generate new stop coordinates and start again
   if (circleIsDone === true && squareIsDone === true && triangleIsDone === true) {
     // generate new parameter values and start again
     circleXNew = random(width);

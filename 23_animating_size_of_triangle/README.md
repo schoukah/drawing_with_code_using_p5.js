@@ -25,7 +25,7 @@ In setup(), we assign an initial random value to the variable:
 ## Decrease the difference between the old and new sizes
 
 In draw(), we need to change the x and y coordinates of the shape by 1/100 of the
-distance between the starting position and the new position:
+difference between the starting size and the new size:
 
     triangleScale += (triangleScaleNew - triangleScale)/100;
 
@@ -49,10 +49,10 @@ Use another if statement to check if the shape has reached its new position, and
 ## Animate changing the size of the triangle
 
 Use a pattern similar to the one we used to animate the placement of the circle and square:
-- above setup(), declare the new variables triangleScaleNew
-- in setup(), assign initial values to the variables
+- above setup(), declare the new variable triangleScaleNew
+- in setup(), assign initial values to the variable
 - in draw(), decrease the difference between the initial and new scale factor on each loop through draw()
 - use an if statement to check if the absolute value of the difference
 between the scale factors is less than 0.1 and, if so, set the finished flag to true
-- at the end of the draw() loop, use an if statement to check if the finished
-flag is true and generate a new random value for the scale of the next triangle
+- at the end of the draw() loop, in the if statement to check if the finished
+flag is true, generate a new random value for the scale factor of the next triangle
