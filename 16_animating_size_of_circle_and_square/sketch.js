@@ -13,7 +13,7 @@ let squareX, squareY, squareWidth, squareHeight;
 let squareXNew, squareYNew, squareWidthNew, squareHeightNew, squareIsDone;
 
 // declare the variables for colour
-let colours = ['red','yellow','blue'];
+let colours;
 
 function setup() {
   createCanvas(400, 400);
@@ -81,9 +81,9 @@ function draw() {
   fill(colours[2]);
   triangle(150,25,290,100,150,175);
 
-  // if the shapes are in their new positions
-  // generate new stop coordinates and start again
+  // if the shapes are in their new positions and sizes
   if (circleIsDone === true && squareIsDone === true) {
+    // generate new values for the parameters and start again
     circleXNew = random(width);
     circleYNew = random(height);
     circleWidthNew = random(width);
