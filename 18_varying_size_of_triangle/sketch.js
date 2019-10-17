@@ -88,7 +88,7 @@ function draw() {
   circleY += (circleYNew-circleY)/100;
   circleWidth += (circleWidthNew - circleWidth)/100;
   circleHeight = circleWidth;
-  if (abs(circleXNew - circleX) < 1 && abs(circleYNew - circleY) < 1 && abs(circleWidthNew - circleWidth < 1)) {
+  if (abs(circleXNew - circleX) < 1 && abs(circleYNew - circleY) < 1 && abs(circleWidthNew - circleWidth) < 1) {
     circleIsDone = true;
   }
 
@@ -99,7 +99,7 @@ function draw() {
   squareY += (squareYNew-squareY)/100;
   squareWidth += (squareWidthNew - squareWidth)/100;
   squareHeight = squareWidth;
-  if (abs(squareXNew - squareX) < 1 && abs(squareYNew - squareY < 1) && abs(circleWidthNew - circleWidth < 1)) {
+  if (abs(squareXNew - squareX) < 1 && abs(squareYNew - squareY) < 1 && abs(circleWidthNew - circleWidth) < 1) {
     squareIsDone = true;
   }
 

@@ -4,75 +4,87 @@ Animating the size of the triangle
 
 */
 
-// variables for ellipse
-let circleX = 75;
-let circleY = 275;
-let circleWidth = 100;
-let circleHeight = circleWidth;
-let circleXNew, circleYNew, circleWidthNew, circleHeightNew;
+'use strict'
 
-// variables for rect
-let squareX = 175;
-let squareY = 225;
-let squareWidth = 100;
-let squareHeight = squareWidth;
-let squareXNew, squareYNew, squareWidthNew, squareHeightNew;
+// declare the variables for ellipse
+let circleX, circleY, circleWidth, circleHeight;
+let circleXNew, circleYNew, circleWidthNew, circleHeightNew, circleIsDone;
 
-// variables for triangle
-let triangleX1 = 150;
-let triangleY1 = 25;
-let triangleX2 = 290;
-let triangleY2 = 100;
-let triangleX3 = 150;
-let triangleY3 = 175;
-let triangleScale = 1;
-// calculate the centroid of the triangle
-let triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
-let triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
-// express the coordinates for the triangle in relationship to the centroid
-triangleX1 = triangleX1 - triangleCentreX;
-triangleY1 = triangleY1 - triangleCentreY;
-triangleX2 = triangleX2 - triangleCentreX;
-triangleY2 = triangleY2 - triangleCentreY;
-triangleX3 = triangleX3 - triangleCentreX;
-triangleY3 = triangleY3 - triangleCentreY;
-let triangleCentreXNew, triangleCentreYNew, triangleScaleNew;
+// declare the variables for rect
+let squareX, squareY, squareWidth, squareHeight;
+let squareXNew, squareYNew, squareWidthNew, squareHeightNew, squareIsDone;
 
-// variables for colour
-let colours = ['red','yellow','blue'];
+// declare the variables for the parameters to triangle
+let triangleX1, triangleY1, triangleX2, triangleY2, triangleX3, triangleY3;
+let triangleCentreX, triangleCentreY, triangleScale;
+let triangleCentreXNew, triangleCentreYNew, triangleIsDone, triangleScaleNew;
 
-// variables for animation flags
-let circleIsDone = false;
-let squareIsDone = false;
-let triangleIsDone = false;
+// declare the variables for colour
+let colours;
 
 function setup() {
   createCanvas(400, 400);
 
-  // initialize the parameters for the new circle
+  // assign initial values to the variables for ellipse
+  circleX = 75;
+  circleY = 275;
+  circleWidth = 100;
+  circleHeight = circleWidth;
   circleXNew = random(width);
   circleYNew = random(height);
   circleWidthNew = random(width);
   circleHeightNew = circleWidthNew;
+  circleIsDone = false;
 
-  // set the initial parameters for the new square
+  // assign initial values to the variables for rect
+  // adjust squareX and squareY to be the coordinates of the centre
+  squareX = 175 + 100/2;
+  squareY = 225 + 100/2;
+  squareWidth = 100;
+  squareHeight = squareWidth;
   squareXNew = random(width);
   squareYNew = random(height);
   squareWidthNew = random(width);
   squareHeightNew = squareWidthNew;
+  squareIsDone = false;
 
-  // set the initial centroid and scale for the new triangle
+  // assign initial values to the variables for triangle
+  triangleX1 = 150;
+  triangleY1 = 25;
+  triangleX2 = 290;
+  triangleY2 = 100;
+  triangleX3 = 150;
+  triangleY3 = 175;
+  // calculate the centroid of the triangle
+  triangleCentreX = (triangleX1 + triangleX2 + triangleX3)/3;
+  triangleCentreY = (triangleY1 + triangleY2 + triangleY3)/3;
+  // express the coordinates for the triangle in relationship to the centroid
+  triangleX1 = triangleX1 - triangleCentreX;
+  triangleY1 = triangleY1 - triangleCentreY;
+  triangleX2 = triangleX2 - triangleCentreX;
+  triangleY2 = triangleY2 - triangleCentreY;
+  triangleX3 = triangleX3 - triangleCentreX;
+  triangleY3 = triangleY3 - triangleCentreY;
+  // set the initial size
+  triangleScale = 1;
+  // set the centroid and scale for the new triangle
   triangleCentreXNew = random(width);
   triangleCentreYNew = random(height);
   triangleScaleNew = random(.1,3);
+  triangleIsDone = false;
+
+  // assign values to the variables for colour
+  colours = ['red','yellow','blue'];
+
+  rectMode(CENTER);
 }
 
 function draw() {
   background('lightgrey');
 
-  drawGraph();
+  drawGrid();
 
-  stroke('black');
+  // don't draw a line around the shapes
   strokeWeight(0);
 
   // draw the circle
@@ -82,7 +94,7 @@ function draw() {
   circleY += (circleYNew-circleY)/100;
   circleWidth += (circleWidthNew - circleWidth)/100;
   circleHeight = circleWidth;
-  if (circleXNew - circleX < 1 && circleYNew - circleY < 1 && circleWidthNew - circleWidth < 1) {
+  if (abs(circleXNew - circleX) < 1 && abs(circleYNew - circleY) < 1 && abs(circleWidthNew - circleWidth) < 1) {
     circleIsDone = true;
   }
 
@@ -93,7 +105,7 @@ function draw() {
   squareY += (squareYNew-squareY)/100;
   squareWidth += (squareWidthNew - squareWidth)/100;
   squareHeight = squareWidth;
-  if (squareXNew - squareX < 1 && squareYNew - squareY < 11 && squareWidthNew - squareWidth < 1) {
+  if (abs(squareXNew - squareX) < 1 && abs(squareYNew - squareY) < 1 && abs(circleWidthNew - circleWidth) < 1) {
     squareIsDone = true;
   }
 
@@ -107,12 +119,14 @@ function draw() {
   triangleCentreX += (triangleCentreXNew - triangleCentreX)/100;
   triangleCentreY += (triangleCentreYNew - triangleCentreY)/100;
   triangleScale += (triangleScaleNew - triangleScale)/100;
-  if (triangleCentreXNew - triangleCentreX < 1 && triangleCentreYNew - triangleCentreY && triangleScale - triangleScaleNew < .1) {
+  if (abs(triangleCentreXNew - triangleCentreX) < 1 && abs(triangleCentreYNew - triangleCentreY) < 1 && abs(triangleScale - triangleScaleNew) < .1) {
     triangleIsDone = true;
   }
+
   // if the shapes are in their new positions
   // generate new stop coordinates and start again
   if (circleIsDone === true && squareIsDone === true && triangleIsDone === true) {
+    // generate new parameter values and start again
     circleXNew = random(width);
     circleYNew = random(height);
     circleWidthNew = random(width);
@@ -124,14 +138,15 @@ function draw() {
     triangleCentreXNew = random(width);
     triangleCentreYNew = random(height);
     triangleScaleNew = random(.1,3);
+    colours = shuffle(colours);
+    // reset the flags so the shapes will move to the new positions
     circleIsDone = false;
     squareIsDone = false;
     triangleIsDone = false;
-    shuffleArray(colours);
   }
 }
 
-function drawGraph() {
+function drawGrid() {
   stroke('grey');
   strokeWeight(1);
   // draw a grid
@@ -141,12 +156,4 @@ function drawGraph() {
   line(0, 100, 400, 100);
   line(0, 200, 400, 200);
   line(0, 300, 400, 300);
-}
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
 }
