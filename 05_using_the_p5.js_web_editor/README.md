@@ -13,29 +13,37 @@ For this workshop, we are going to use the web editor:
 
 If you want to save your sketches or share your sketches via the p5.js editor website, you will have to create an account.
 
-Click on the Sign Up button at the top right corner of the screen. The only information you will be asked to provide is your email address and a password.
+- click on the Sign Up button at the top right corner of the screen
+- the only information you will be asked to provide is your email address and a password
+- if you don't want to sign up, you can still use the editor but won't be able to save your work in progress or the final sketch
 
 ## What are the different parts of the editor for?
 
 Editor pane
-  - Where we type in the p5.js commands that will make up our sketch
+  - used to type in the p5.js commands that will make up our sketch
+  - you can find a full reference to the p5.js commands at https://p5js.org/reference/
 
 Start and Stop buttons
-  - We start and stop our sketch using the buttons just above the Editor pane.
+  - used to start and stop our sketch
+  - they are located just above the Editor pane
+  - try them and see what happens
 
 Preview pane
-  - The result of playing the sketch is shown in the Preview pane.
+  - shows the result of playing the sketch
 
 Console pane
-- If the sketch can't be played, messages about possible reasons why are shown in the Console pane.
-- Our sketches can print status information to the Console pane to help us fix programming problems.
+- if the sketch can't be played, messages about possible reasons why are shown in the Console pane.
+- we can use the console.log() command in our sketches to print status information to the Console pane to help us fix programming problems.
+- in the Editor pane, type in the following statement then press Play:
+
+      console.log('Hello, world!');
 
 ## The Editor pane
 
 - The Edit pane is pre-filled with a skeleton of a p5.js sketch.
 - All of our p5.js sketches will have at least two function definitions:
   - setup()
-  - draw().
+  - draw()
 
 ## setup()
 
@@ -55,7 +63,3 @@ The skeleton draw() function definition draws a background on the canvas:
 
 - 220 represents a shade of grey
 - try changing it and see what happens
-
-# The p5.js command reference
-
-A full reference to the p5.js commands that  can be found at https://p5js.org/reference/. 

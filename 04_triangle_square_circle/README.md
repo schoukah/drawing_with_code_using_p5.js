@@ -1,6 +1,6 @@
 # Triangle, Square, Circle: A Psychological Test
 
-You should have a sketch that looks similar to this:
+Now that we've made our first sketch of generative art, you should have a sketch that looks similar to this:
 
 <p><img style='width:50%;margin-left:25%' src='triangle, square, circle.jpg'></p>
 

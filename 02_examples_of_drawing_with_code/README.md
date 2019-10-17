@@ -32,14 +32,16 @@ https://adamherst.art/wall_drawing_boston_museum_after_sol_lewitt/
 
 <div style='text-align: right'><p>https://medium.com/@sfpc/fall-2017-week-2-a0b12da6a9a6</p></div>
 
-https://miro.medium.com/max/1024/0*c0mElQWLFU27xwKZ.jpg
+![](https://miro.medium.com/max/1024/0*c0mElQWLFU27xwKZ.jpg)
 
-https://miro.medium.com/max/988/0*eH9FCa1zyRlPqxo5.png
+![](https://miro.medium.com/max/988/0*eH9FCa1zyRlPqxo5.png)
 
 ## Harold Cohen
 
-> Harold Cohen, artist and pioneer in the field of computer-generated art, died on April 27, 2016 at the age of 87. Cohen is the author of AARON, perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use. Cohen viewed AARON as his collaborator. At times during their decades-long relationship AARON was quite autonomous, responsible for the composition, coloring and other aspects of a work; more recently, AARON served Cohen by making drawings that Cohen would develop into paintings. Cohen's death is the end of a lengthy partnership between an artist and an artificial intelligence.
+> Cohen is the author of AARON, perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use. Cohen viewed AARON as his collaborator. At times during their decades-long relationship AARON was quite autonomous, responsible for the composition, coloring and other aspects of a work; more recently, AARON served Cohen by making drawings that Cohen would develop into paintings. Cohen's death is the end of a lengthy partnership between an artist and an artificial intelligence.
 
 <div style='text-align: right'><p>https://elcamencinitas.tributes.com/dignitymemorial/obituary/Harold-Cohen-103521554</p></div>
 
-https://www.youtube.com/watch?v=ojISZrIKRc8
+https://youtu.be/ojISZrIKRc8
+
+<iframe width="635" height="466" src="https://www.youtube.com/embed/ojISZrIKRc8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
