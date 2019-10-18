@@ -13,7 +13,6 @@ For this workshop, we are going to use the web editor:
 
 If you want to save your sketches or share your sketches via the p5.js editor website, you will have to create an account.
 
-- click on the Sign Up button at the top right corner of the screen
 - the only information you will be asked to provide is your email address and a password
 - if you don't want to sign up, you can still use the editor but won't be able to save your work in progress or the final sketch
 
@@ -26,7 +25,6 @@ Editor pane
 Start and Stop buttons
   - used to start and stop our sketch
   - they are located just above the Editor pane
-  - try them and see what happens
 
 Preview pane
   - shows the result of playing the sketch
@@ -34,9 +32,6 @@ Preview pane
 Console pane
 - if the sketch can't be played, messages about possible reasons why are shown in the Console pane.
 - we can use the console.log() command in our sketches to print status information to the Console pane to help us fix programming problems.
-- in the Editor pane, type in the following statement then press Play:
-
-      console.log('Hello, world!');
 
 ## The Editor pane
 
@@ -53,7 +48,6 @@ The skeleton setup() creates a canvas to draw on:
 
 - the first 400 represents the width of the canvas in pixels
 - the second 400 represents the height of the canvas in pixels
-- try changing them and see what happens (remember to press Stop then Start if you don't have Auto-refresh checked)
 
 ## draw()
 
@@ -62,4 +56,16 @@ The skeleton draw() function definition draws a background on the canvas:
     background(220);
 
 - 220 represents a shade of grey
-- try changing it and see what happens
+
+## Experiment with the p5js web editor
+
+Try these activities:
+- sign up for an account if you want to be able to save your sketches
+- try the Start and Stop buttons and see what happens
+- in the Editor pane, type in the following statement then press Play:
+
+      console.log('Hello, world!');
+
+- try changing the parameters to createCanvas() and see what happens (remember to press Stop then Start if you don't have Auto-refresh checked)
+- try changing the parameters to background() and see what happens
+- open a browser tab on the p5.js command reference so you can refer to it during the activities

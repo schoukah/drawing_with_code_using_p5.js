@@ -35,4 +35,4 @@ Some definitions I like:
 
 <div style='text-align: right'><p>https://www.futurelearn.com/courses/creative-coding/2/steps/35887</div>
 
-What themes do you find recurring in these definitions?
+Are there any recurring themes in these definitions that stand our for you?

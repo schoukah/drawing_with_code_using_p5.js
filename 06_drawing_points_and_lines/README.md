@@ -39,9 +39,7 @@ Sets the width of the stroke used for lines, points, and the border around shape
 - the default width is 1 pixel
 - a weight of 0 prevents lines from being drawn around shapes
 
-## Drawing a grid
-
-First, we're going to draw a grid on our drawings on paper. Then we're going use the line() function to draw the grid on the p5.js canvas.
+## Draw a grid on your sketch
 
 On your drawing:
 
@@ -56,4 +54,4 @@ Use the line() function to divide your p5.js canvas into a similar grid. The fir
 
     line(100,0,100,400);
 
-Where do you think you should put your lines of code? In setup() or in draw()? What happens if you change the strokeWeight()?
+- Where do you think you should put your lines of code? In setup() or in draw()? - What happens if you change the strokeWeight()?

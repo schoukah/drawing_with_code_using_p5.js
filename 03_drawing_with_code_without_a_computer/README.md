@@ -1,14 +1,16 @@
 # Drawing with Code without a Computer
 
-We're going to create our first generative art by drawing with code without a computer using our low-tech generative art kits.
+In the immortal words of Ms Frizzle: "Let's make some generative art!"
 
-<p><img src='Ms-Frizzle.jpg' style='width:50%;margin-left:25%'></p>
+<p><img src='Ms-Frizzle.jpg' style='width:75%;margin-left:12%'></p>
 
-Open your envelopes and:
+We're going to start by drawing with code without a computer. Open your envelopes and:
 
-    1. Using the pencil, draw a triangle anywhere on the page
-    2. Somewhere in the remaining space, draw a circle
-    3. Finally, in the remaining space, draw a square
-    4. Colour in one of the shapes using the red crayon
-    5. Colour in one of the remaining shapes using the yellow crayon
-    6. Colour in the last shape using the blue crayon
+    1. Take out a piece of paper and the pencil
+    2. Anywhere on the page, draw a triangle
+    3. Somewhere in the remaining space, draw a circle
+    4. Finally, in the remaining space, draw a square
+    5. Colour in one of the shapes using the red crayon
+    6. Colour in one of the remaining shapes using the yellow crayon
+    7. Colour in the last shape using the blue crayon
+    8. Repeat the instructions one more time using a new piece of paper
