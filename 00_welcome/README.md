@@ -38,13 +38,8 @@ We're going to:
 
 We aren't going to:
 
-- explore the intricacies of programming in p5.js or JavaScript
-<br>
-(but we are going to learn some basic programming concepts as we need them)
-<br>
-- we aren't going to do a lot of math
-<br>
-(but we are going to do a little bit)
+- explore the intricacies of programming in p5.js or JavaScript (but we are going to learn some basic programming concepts as we need them)
+- we aren't going to do a lot of math (but we are going to do a little bit)
 
 ## Following along
 
